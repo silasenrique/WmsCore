@@ -1,0 +1,66 @@
+using Wms.Core.Application.Abstractions;
+using ErrorOr;
+using Wms.Core.Application.DTO;
+using Wms.Core.Infrastructure.Abstractions.ProductAbstraction;
+using Wms.Core.Domain.Entities.Product;
+using System.Linq.Expressions;
+
+namespace Wms.Core.Application.Services;
+
+public class ProductService : IProductService
+{
+    private readonly IProductRepository _productRepository;
+
+    public ProductService(IProductRepository productRepository)
+    {
+        _productRepository = productRepository;
+    }
+
+    public async Task<ErrorOr<Product>> Add(Product product)
+    {
+        var validateProduct = product.Validate();
+        if (validateProduct.Count > 0)
+        {
+            return validateProduct;
+        }
+
+        Expression<Func<Product, bool>> getProduct = p =>
+            p.Code == product.Code &&
+            p.OwnerCode == product.OwnerCode;
+
+
+
+        await _productRepository.Add(product);
+
+        /*
+        
+        {
+    "code": "122129391",
+    "description": "Produto fictício 122129391",
+    "status": 1,
+    "controls": {
+        "lot": true,
+        "expirationDate": true,
+        "productionDate": true,
+        "driveUnit": "UN"
+    }
+}
+        
+        */
+    }
+
+    public Task<Error?> Delete(string owner, string code)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<List<Product>> Get(Product product)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<ErrorOr<Product>> Update(Product product)
+    {
+        throw new NotImplementedException();
+    }
+}

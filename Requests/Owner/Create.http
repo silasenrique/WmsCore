@@ -1,0 +1,10 @@
+POST {{host}}/owner HTTP/1.1
+Content-Type: application/json
+
+{
+    "code": "Comfrio",
+    "name": "Souza Cruz",
+    "document": "34291311000105",
+    "typeDoc": 1,
+    "status": 2
+}
