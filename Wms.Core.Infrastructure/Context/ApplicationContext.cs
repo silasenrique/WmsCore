@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using Wms.Core.Domain.Entities.Address;
 using Wms.Core.Domain.Entities.Entity;
+using Wms.Core.Domain.Entities.Inventory;
 using Wms.Core.Domain.Entities.Product;
+using Wms.Core.Domain.Entities.Unitizer;
 using Wms.Core.Domain.Entities.Warehouse;
 using Wms.Core.Infrastructure.Context.Configure.Entity;
 using Wms.Core.Infrastructure.Context.Configure.ProductConfiguration;
@@ -17,7 +20,7 @@ public class ApplicationContext : DbContext
     public DbSet<DistributionCenter>? DistributionCenter { get; set; }
 
     //* Warehouse
-    public DbSet<Stock>? Stock { get; set; }
+    public DbSet<Inventory>? Stock { get; set; }
     public DbSet<Zone>? Zone { get; set; }
     public DbSet<Unitizer>? Unitizer { get; set; }
     public DbSet<StockAddress>? StockAddresses { get; set; }

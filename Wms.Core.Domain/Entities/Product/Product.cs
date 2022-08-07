@@ -4,7 +4,7 @@ using Wms.Core.Domain.Enums;
 
 namespace Wms.Core.Domain.Entities.Product;
 
-public record Product
+public class Product
 {
     public int Id { get; set; }
     public string? Code { get; set; }

@@ -1,5 +1,5 @@
 using ErrorOr;
-using Wms.Core.Domain.Entities.Warehouse;
+using Wms.Core.Domain.Entities.Unitizer;
 
 namespace Wms.Core.Application.Abstractions.Warehouse;
 

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Wms.Core.Domain.Entities.Address;
 using Wms.Core.Domain.Entities.Entity;
-using Wms.Core.Domain.Entities.Warehouse;
+using Wms.Core.Domain.Entities.Unitizer;
 
 namespace Wms.Core.Infrastructure.Context.Configure.Warehouse;
 

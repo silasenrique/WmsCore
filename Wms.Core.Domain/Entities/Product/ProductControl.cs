@@ -1,6 +1,6 @@
 namespace Wms.Core.Domain.Entities.Product;
 
-public record ProductControl
+public class ProductControl
 {
     public int Id { get; set; }
     public bool Lot { get; set; }

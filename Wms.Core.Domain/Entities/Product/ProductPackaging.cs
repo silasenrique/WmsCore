@@ -2,7 +2,7 @@ using Wms.Core.Domain.Enums;
 
 namespace Wms.Core.Domain.Entities.Product;
 
-public record ProductPackaging
+public class ProductPackaging
 {
     public int Id { get; set; }
     public string? BarCode { get; set; }

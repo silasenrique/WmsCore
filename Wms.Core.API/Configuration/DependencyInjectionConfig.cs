@@ -1,8 +1,8 @@
-using Wms.Core.Application.Abstractions.Entity;
-using Wms.Core.Application.Services.Entity;
-using Wms.Core.Infrastructure.Abstractions.Entity;
+using MediatR;
+using Wms.Core.Application.Commands.DistributionCenterCommand;
 using Wms.Core.Infrastructure.Context;
-using Wms.Core.Infrastructure.Repository.Entity;
+using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
+using Wms.Core.Infrastructure.Repositories.EntityRepository;
 
 namespace Wms.Core.API.Configuration;
 
@@ -12,11 +12,9 @@ public static class DependencyInjectionConfig
     {
         services.AddScoped<ApplicationContext>();
 
-        // services.AddScoped<IProductService, ProductService>();
-        // services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<IDistributionCenterRepository, DistributionCenterRepository>();
 
-        services.AddScoped<IOwnerService, OwnerService>();
-        services.AddScoped<IOwnerRepository, OwnerRepository>();
+        services.AddMediatR(typeof(CreateCommand).Assembly);
 
         return services;
     }
