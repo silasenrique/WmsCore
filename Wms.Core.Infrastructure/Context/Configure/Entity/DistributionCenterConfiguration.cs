@@ -7,11 +7,11 @@ public static class DistributionCenterConfiguration
 {
     public static void ConfigureConstraints(ModelBuilder builder)
     {
-        builder.Entity<Provider>()
+        builder.Entity<DistributionCenter>()
             .HasIndex(o => o.Code)
             .IsUnique(true);
 
-        builder.Entity<Provider>()
+        builder.Entity<DistributionCenter>()
             .HasIndex(o => o.Document)
             .IsUnique(true);
     }

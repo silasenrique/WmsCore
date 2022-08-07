@@ -8,8 +8,6 @@ public class MainController : ControllerBase
 {
     protected ActionResult Problem(List<Error> errors)
     {
-        //  HttpContext.Items[HttpContextItemKeys.Errors] = errors;
-
         var firstError = errors[0];
 
         var statusCode = firstError.Type switch
@@ -27,7 +25,10 @@ public class MainController : ControllerBase
             Detail = firstError.Description
         };
 
-        errors.ForEach(e => problemDetails.Extensions.Add(e.Code, e.Description));
+        if (errors.Count > 1)
+        {
+            errors.ForEach(e => problemDetails.Extensions.Add(e.Code, e.Description));
+        }
 
         return new ObjectResult(problemDetails)
         {
