@@ -23,6 +23,10 @@ public class GetDistributionCenter : IRequestHandler<DistributionCenterDTO, List
         (e.Document == query.Document || query.Document == null) &&
         (e.Name.Contains(query.Name) || query.Name == null);
 
-        return await _repository.Get(expression);
+        // var list = await _repository.Get(expression);
+
+        List<DistributionCenterDTO> list = new();
+
+        return list;
     }
 }

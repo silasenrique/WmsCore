@@ -1,8 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Wms.Core.API.Configuration;
+using Wms.Core.Application;
+using Wms.Core.Infrastructure;
 using Wms.Core.Infrastructure.Context;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddApplication().AddInfrastructure();
 
 builder.Services.AddDbContext<ApplicationContext>(options =>
 {
