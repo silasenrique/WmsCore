@@ -49,4 +49,11 @@ public class DistributionCenterController : MainController
 
         return NoContent();
     }
+
+    public async Task<ActionResult<List<DistributionCenterDTO>>> Get([FromQuery] DistributionCenterDTO query)
+    {
+        var list = await _mediator.Send(query);
+
+        return Ok(list);
+    }
 }

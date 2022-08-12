@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+using MapsterMapper;
 using MediatR;
 using Wms.Core.Application.DTOs;
 using Wms.Core.Domain.Entities.Entity;
@@ -9,24 +10,22 @@ namespace Wms.Core.Application.Queries.Entity.DistributionCenterQueries;
 public class GetDistributionCenter : IRequestHandler<DistributionCenterDTO, List<DistributionCenterDTO>>
 {
     readonly IDistributionCenterRepository _repository;
+    readonly IMapper _mapper;
 
-    public GetDistributionCenter(IDistributionCenterRepository repository)
+    public GetDistributionCenter(IDistributionCenterRepository repository, IMapper mapper)
     {
         _repository = repository;
+        _mapper = mapper;
     }
 
     public async Task<List<DistributionCenterDTO>> Handle(DistributionCenterDTO query, CancellationToken cancellationToken)
     {
         Expression<Func<DistributionCenter, bool>> expression = e =>
-        (e.Id == query.Id || query.Id == 0) &&
+        // (e.Id == query.Id || query.Id == 0) &&
         (e.Code == query.Code || query.Code == null) &&
-        (e.Document == query.Document || query.Document == null) &&
-        (e.Name.Contains(query.Name) || query.Name == null);
+        (e.Document == query.Document || query.Document == null)/* &&
+        (e.Name.Contains(query.Name) || query.Name == null)*/;
 
-        // var list = await _repository.Get(expression);
-
-        List<DistributionCenterDTO> list = new();
-
-        return list;
+        return _mapper.Map<List<DistributionCenterDTO>>(await _repository.Get(expression));
     }
 }

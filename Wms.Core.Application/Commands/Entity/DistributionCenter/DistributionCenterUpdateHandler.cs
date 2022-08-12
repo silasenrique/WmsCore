@@ -1,5 +1,6 @@
 using System.Linq.Expressions;
 using ErrorOr;
+using MapsterMapper;
 using MediatR;
 using Wms.Core.Application.Commands.Entity.DistributionCenter.Common;
 using Wms.Core.Application.DTOs;
@@ -12,11 +13,13 @@ public class DistributionCenterUpdateHandler : IRequestHandler<DistributionCente
 {
     readonly IDistributionCenterRepository _repository;
     readonly ISender _mediator;
+    readonly IMapper _mapper;
 
-    public DistributionCenterUpdateHandler(IDistributionCenterRepository distributionCenterRepository, ISender mediator)
+    public DistributionCenterUpdateHandler(IDistributionCenterRepository distributionCenterRepository, ISender mediator, IMapper mapper)
     {
         _repository = distributionCenterRepository;
         _mediator = mediator;
+        _mapper = mapper;
     }
 
     public async Task<ErrorOr<DistributionCenterDTO>> Handle(DistributionCenterUpdateCommand command, CancellationToken cancellationToken)
@@ -35,17 +38,12 @@ public class DistributionCenterUpdateHandler : IRequestHandler<DistributionCente
             return await _mediator.Send(command, cancellationToken);
         }
 
+        newDistributionCenter.LastChangeDate = getCd.FirstOrDefault()!.LastChangeDate;
+
         await _repository.Update(newDistributionCenter);
 
         getCd = await _repository.Get(expression);
-        var cd = getCd.FirstOrDefault();
 
-        return new DistributionCenterDTO
-        {
-            Id = cd!.Id,
-            Code = cd.Code,
-            Name = cd.Name,
-            Document = cd.Document
-        };
+        return _mapper.Map<DistributionCenterDTO>(getCd.FirstOrDefault()!);
     }
 }

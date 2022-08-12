@@ -12,6 +12,9 @@ public class DistributionCenter
         Code = code;
         Name = name;
         Document = document;
+
+        CreationDate = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+        LastChangeDate = CreationDate;
     }
 
     public DistributionCenter(int id, string? code, string? name, string? document)
@@ -20,12 +23,13 @@ public class DistributionCenter
         Code = code;
         Name = name;
         Document = document;
+        LastChangeDate = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
     }
 
     public int Id { get; set; }
     public string? Code { get; set; }
     public string? Name { get; set; }
     public string? Document { get; set; }
-    public DateTime CreationDate { get; set; }
-    public DateTime LastChangeDate { get; set; }
+    public long CreationDate { get; set; }
+    public long LastChangeDate { get; set; }
 }
