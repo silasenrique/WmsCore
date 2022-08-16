@@ -2,12 +2,12 @@ namespace Wms.Core.Domain.Entities.Entity;
 
 public class DistributionCenter
 {
-    public DistributionCenter(int id)
+    public DistributionCenter(string code)
     {
-        Id = id;
+        Code = code;
     }
 
-    public DistributionCenter(string? code, string? name, string? document)
+    public DistributionCenter(string code, string name, string document)
     {
         Code = code;
         Name = name;
@@ -17,7 +17,7 @@ public class DistributionCenter
         LastChangeDate = CreationDate;
     }
 
-    public DistributionCenter(int id, string? code, string? name, string? document)
+    public DistributionCenter(int id, string code, string name, string document)
     {
         Id = id;
         Code = code;

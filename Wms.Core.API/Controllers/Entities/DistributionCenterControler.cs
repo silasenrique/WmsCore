@@ -1,7 +1,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Wms.Core.Application.Commands.Entity.DistributionCenter.Common;
-using Wms.Core.Application.DTOs;
+using Wms.Core.Application.Commands.Entity.DistributionCenterCommand.Create;
+using Wms.Core.Application.Commands.Entity.DistributionCenterCommand.Delete;
+using Wms.Core.Application.Commands.Entity.DistributionCenterCommand.Update;
+using Wms.Core.Application.Contracts.Entity.DistributionCenter;
+using Wms.Core.Application.Queries.Entity.DistributionCenterQueries;
 
 namespace Wms.Core.API.Controllers.Entities;
 
@@ -16,7 +19,7 @@ public class DistributionCenterController : MainController
     }
 
     [HttpPost]
-    public async Task<ActionResult<DistributionCenterDTO>> Create(DistributionCenterWriteCommand distributionCenter)
+    public async Task<ActionResult<DistributionCenterResponse>> Create(DistributionCenterCreateCommand distributionCenter)
     {
         var newCenter = await _mediator.Send(distributionCenter);
 
@@ -27,7 +30,7 @@ public class DistributionCenterController : MainController
     }
 
     [HttpPut]
-    public async Task<ActionResult<DistributionCenterDTO>> Update(DistributionCenterUpdateCommand distributionCenter)
+    public async Task<ActionResult<DistributionCenterResponse>> Update(DistributionCenterUpdateCommand distributionCenter)
     {
         var newCenter = await _mediator.Send(distributionCenter);
 
@@ -37,20 +40,20 @@ public class DistributionCenterController : MainController
         );
     }
 
-    [HttpDelete]
-    public async Task<ActionResult> Delete([FromQuery] DistributionCenterDeleteCommand command)
-    {
-        var err = await _mediator.Send(command);
+    //[HttpDelete]
+    //public async Task<ActionResult> Delete([FromQuery] DistributionCenterDeleteCommand command)
+    //{
+    //    var err = await _mediator.Send(command);
+    //
+    //    if (err != null)
+    //    {
+    //        return BadRequest(err);
+    //    }
+    //
+    //    return NoContent();
+    //}
 
-        if (err != null)
-        {
-            return BadRequest(err);
-        }
-
-        return NoContent();
-    }
-
-    public async Task<ActionResult<List<DistributionCenterDTO>>> Get([FromQuery] DistributionCenterDTO query)
+    public async Task<ActionResult<List<DistributionCenterResponse>>> Get([FromQuery] DistributionCenterQueries query)
     {
         var list = await _mediator.Send(query);
 
