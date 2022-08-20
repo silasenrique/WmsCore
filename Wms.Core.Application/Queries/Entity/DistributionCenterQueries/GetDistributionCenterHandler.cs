@@ -22,10 +22,10 @@ public class GetDistributionCenterHandler : ICommandHandler<DistributionCenterQu
     public async Task<List<DistributionCenterResponse>> Handle(DistributionCenterQueries query, CancellationToken cancellationToken)
     {
         Expression<Func<DistributionCenter, bool>> expression = e =>
-        // (e.Id == query.Id || query.Id == 0) &&
+        (e.Id == query.Id || query.Id == 0) &&
         (e.Code == query.Code || query.Code == null) &&
-        (e.Document == query.Document || query.Document == null)/* &&
-        (e.Name.Contains(query.Name) || query.Name == null)*/;
+        (e.Document == query.Document || query.Document == null) &&
+        (e.Name.Contains(query.Name) || query.Name == null);
 
         return _mapper.Map<List<DistributionCenterResponse>>(await _repository.Get(expression));
     }

@@ -11,8 +11,8 @@ using Wms.Core.Infrastructure.Context;
 namespace Wms.Core.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220808002858_NewMigration")]
-    partial class NewMigration
+    [Migration("20220819223812_NovaMigration")]
+    partial class NovaMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

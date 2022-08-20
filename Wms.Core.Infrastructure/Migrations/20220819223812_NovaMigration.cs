@@ -5,7 +5,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Wms.Core.Infrastructure.Migrations
 {
-    public partial class NewMigration : Migration
+    public partial class NovaMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

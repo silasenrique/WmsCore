@@ -32,26 +32,26 @@ public class DistributionCenterController : MainController
     [HttpPut]
     public async Task<ActionResult<DistributionCenterResponse>> Update(DistributionCenterUpdateCommand distributionCenter)
     {
-        var newCenter = await _mediator.Send(distributionCenter);
+        var updated = await _mediator.Send(distributionCenter);
 
-        return newCenter.Match(
-            newCenter => Ok(newCenter),
+        return updated.Match(
+            updated => Ok(updated),
             errors => Problem(errors)
         );
     }
 
-    //[HttpDelete]
-    //public async Task<ActionResult> Delete([FromQuery] DistributionCenterDeleteCommand command)
-    //{
-    //    var err = await _mediator.Send(command);
-    //
-    //    if (err != null)
-    //    {
-    //        return BadRequest(err);
-    //    }
-    //
-    //    return NoContent();
-    //}
+    [HttpDelete]
+    public async Task<ActionResult> Delete([FromQuery] DistributionCenterDeleteCommand command)
+    {
+        var err = await _mediator.Send(command);
+
+        if (err != null)
+        {
+            return BadRequest(err);
+        }
+
+        return NoContent();
+    }
 
     public async Task<ActionResult<List<DistributionCenterResponse>>> Get([FromQuery] DistributionCenterQueries query)
     {

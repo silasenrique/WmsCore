@@ -6,6 +6,6 @@ public record DistributionCenterResponse
     public string? Code { get; set; }
     public string? Name { get; set; }
     public string? Document { get; set; }
-    public long CreationDate { get; set; }
-    public long LastChangeDate { get; set; }
+    public string? CreationDate { get; set; }
+    public string? LastChangeDate { get; set; }
 }
