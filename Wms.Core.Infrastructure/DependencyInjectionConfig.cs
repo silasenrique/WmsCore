@@ -11,6 +11,7 @@ public static class DependencyInjection
     {
         services.AddScoped<ApplicationContext>();
         services.AddScoped<IDistributionCenterRepository, DistributionCenterRepository>();
+        services.AddScoped<IOwnerRepository, OwnerRepository>();
 
         return services;
     }

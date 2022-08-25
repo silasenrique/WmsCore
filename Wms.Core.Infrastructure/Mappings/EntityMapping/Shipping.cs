@@ -15,5 +15,7 @@ public class ShippingMapping : IEntityTypeConfiguration<Shipping>
         builder.Property(o => o.Document).HasMaxLength(14);
         builder.Property(o => o.TypeDoc).HasConversion<int>();
         builder.Property(o => o.Status).HasConversion<int>().IsRequired();
+        builder.Property(b => b.LastChangeDate);
+        builder.Property(b => b.CreationDate);
     }
 }
