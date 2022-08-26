@@ -1,5 +1,5 @@
 using ErrorOr;
-using Wms.Core.Application.Abstractions.Messaging;
+using Wms.Core.Application.Common.Interfaces.Messaging;
 using Wms.Core.Application.Contracts.Entity.Owner;
 
 namespace Wms.Core.Application.Commands.Entity.OwnerCommand.Update;

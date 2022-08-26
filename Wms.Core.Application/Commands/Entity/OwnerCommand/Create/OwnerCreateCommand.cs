@@ -1,6 +1,6 @@
 using ErrorOr;
 using Wms.Core.Application.Contracts.Entity.Owner;
-using Wms.Core.Application.Abstractions.Messaging;
+using Wms.Core.Application.Common.Interfaces.Messaging;
 
 namespace Wms.Core.Application.Commands.Entity.OwnerCreateCommand.Create;
 

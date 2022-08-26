@@ -3,6 +3,6 @@ Content-Type: application/json; charset=utf-8
 
 {
     "code": "004",
-    "name" : "Centro de Distribuição - 001 - RJ",
-    "document": "121112"
+    "name" : null,
+    "document": null
 }

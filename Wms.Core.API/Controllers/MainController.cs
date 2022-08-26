@@ -1,5 +1,6 @@
 using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Wms.Core.API.Controllers;
 
@@ -8,9 +9,22 @@ public class MainController : ControllerBase
 {
     protected ActionResult Problem(List<Error> errors)
     {
-        var firstError = errors[0];
+        if (errors.Count is 0)
+        {
+            return Problem();
+        }
 
-        var statusCode = firstError.Type switch
+        if (errors.All(error => error.Type == ErrorType.Validation))
+        {
+            return ValidationProblem(errors);
+        }
+
+        return Problem(errors[0]);
+    }
+
+    private ActionResult Problem(Error error)
+    {
+        var statusCode = error.Type switch
         {
             ErrorType.Conflict => StatusCodes.Status409Conflict,
             ErrorType.Validation => StatusCodes.Status400BadRequest,
@@ -18,21 +32,18 @@ public class MainController : ControllerBase
             _ => StatusCodes.Status500InternalServerError,
         };
 
-        var problemDetails = new ProblemDetails
-        {
-            Status = statusCode,
-            Title = firstError.Code,
-            Detail = firstError.Description
-        };
+        return Problem(statusCode: statusCode, title: error.Description);
+    }
 
-        if (errors.Count > 1)
+    private ActionResult ValidationProblem(List<Error> errors)
+    {
+        var modelStateDictionary = new ModelStateDictionary();
+
+        foreach (var error in errors)
         {
-            errors.ForEach(e => problemDetails.Extensions.Add(e.Code, e.Description));
+            modelStateDictionary.AddModelError(error.Code, error.Description);
         }
 
-        return new ObjectResult(problemDetails)
-        {
-            StatusCode = statusCode
-        };
+        return ValidationProblem(modelStateDictionary);
     }
 }

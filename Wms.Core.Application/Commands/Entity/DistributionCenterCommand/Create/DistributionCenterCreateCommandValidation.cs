@@ -1,10 +1,11 @@
 using FluentValidation;
+using Wms.Core.Application.Commands.Entity.DistributionCenterCommand.Create;
 
-namespace Wms.Core.Domain.Entities.Entity.Validations;
+namespace Wms.Core.Application.Commands.Entity.DistributionCenterCommand;
 
-public class DistributionCenterValidation : AbstractValidator<DistributionCenter>
+public class DistributionCenterCreateCommandValidation : AbstractValidator<DistributionCenterCreateCommand>
 {
-    public DistributionCenterValidation()
+    public DistributionCenterCreateCommandValidation()
     {
         RuleFor(d => d.Code)
             .NotEmpty()

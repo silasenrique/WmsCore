@@ -1,6 +1,6 @@
 using ErrorOr;
 using MapsterMapper;
-using Wms.Core.Application.Abstractions.Messaging;
+using Wms.Core.Application.Common.Interfaces.Messaging;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
 namespace Wms.Core.Application.Commands.Entity.OwnerCommand.Delete;
