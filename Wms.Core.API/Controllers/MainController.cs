@@ -9,11 +9,6 @@ public class MainController : ControllerBase
 {
     protected ActionResult Problem(List<Error> errors)
     {
-        if (errors.Count is 0)
-        {
-            return Problem();
-        }
-
         if (errors.All(error => error.Type == ErrorType.Validation))
         {
             return ValidationProblem(errors);
@@ -22,7 +17,7 @@ public class MainController : ControllerBase
         return Problem(errors[0]);
     }
 
-    private ActionResult Problem(Error error)
+    public ActionResult Problem(Error error)
     {
         var statusCode = error.Type switch
         {

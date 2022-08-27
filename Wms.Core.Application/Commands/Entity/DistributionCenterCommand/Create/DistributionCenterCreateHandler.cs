@@ -10,12 +10,12 @@ namespace Wms.Core.Application.Commands.Entity.DistributionCenterCommand.Create;
 
 public class DistributionCenterCreateHandler : ICommandHandler<DistributionCenterCreateCommand, ErrorOr<DistributionCenterResponse>>
 {
-    readonly IDistributionCenterRepository _distributionCenterRepository;
+    readonly IDistributionCenterRepository _repository;
     readonly IMapper _mapper;
 
     public DistributionCenterCreateHandler(IDistributionCenterRepository distributionCenterRepository, IMapper mapper)
     {
-        _distributionCenterRepository = distributionCenterRepository;
+        _repository = distributionCenterRepository;
         _mapper = mapper;
     }
 
@@ -23,13 +23,18 @@ public class DistributionCenterCreateHandler : ICommandHandler<DistributionCente
     {
         var newDistributionCenter = _mapper.Map<DistributionCenter>(command);
 
-        if (await _distributionCenterRepository.GetByCode(command.Code) is not null)
+        if (await _repository.GetByCode(command.Code) is not null)
         {
             return DistributionCenterErrors.CodeHasBeenEnteredBefore;
         }
 
-        await _distributionCenterRepository.Insert(newDistributionCenter);
+        if (await _repository.GetByDocument(command.Document) is not null)
+        {
+            return DistributionCenterErrors.DocumentHasBenEnteredBefore;
+        }
 
-        return _mapper.Map<DistributionCenterResponse>(await _distributionCenterRepository.GetByCode(command.Code));
+        await _repository.Insert(newDistributionCenter);
+
+        return _mapper.Map<DistributionCenterResponse>(await _repository.GetByCode(command.Code));
     }
 }
