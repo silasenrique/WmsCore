@@ -14,5 +14,7 @@ public class ProductMapping : IEntityTypeConfiguration<Product>
         builder.Property(p => p.Code).IsRequired().HasMaxLength(20);
         builder.Property(p => p.Description).HasMaxLength(200);
         builder.Property(p => p.Status).IsRequired().HasConversion<int>();
+        builder.Property(p => p.LastChangeDate);
+        builder.Property(p => p.CreationDate);
     }
 }

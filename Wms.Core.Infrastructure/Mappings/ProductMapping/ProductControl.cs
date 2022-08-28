@@ -17,5 +17,7 @@ public class ProductControlMapping : IEntityTypeConfiguration<ProductControl>
         builder.Property(p => p.Cd).HasMaxLength(4).IsRequired();
         builder.Property(p => p.OwnerCode).HasMaxLength(20).IsRequired();
         builder.Property(p => p.ProductCode).HasMaxLength(20).IsRequired();
+        builder.Property(b => b.LastChangeDate);
+        builder.Property(b => b.CreationDate);
     }
 }

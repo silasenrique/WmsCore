@@ -21,4 +21,7 @@ public class ProductPackaging
     public string? OwnerCode { get; set; }
     public string? ProductCode { get; set; }
     public string? UnitizerType { get; set; }
+
+    public long CreationDate { get; set; }
+    public long LastChangeDate { get; set; }
 }

@@ -12,4 +12,7 @@ public class ProductControl
     public string? DriveUnit { get; set; }
     public string? OwnerCode { get; set; }
     public string? ProductCode { get; set; }
+
+    public long CreationDate { get; set; }
+    public long LastChangeDate { get; set; }
 }
