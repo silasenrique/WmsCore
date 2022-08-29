@@ -2,7 +2,6 @@ using ErrorOr;
 using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
 using Wms.Core.Application.Contracts.Product.Product;
-using Wms.Core.Application.Errors.ProductErrors;
 using Wms.Core.Domain.Entities.Product;
 using Wms.Core.Infrastructure.Interfaces.ProductRepositoryInterface;
 
@@ -21,11 +20,6 @@ public class ProductCreateCommandHandler : ICommandHandler<ProductCreateCommand,
 
     public async Task<ErrorOr<ProductResponse>> Handle(ProductCreateCommand command, CancellationToken cancellationToken)
     {
-        if (await _repository.GetByOwnerAndCode(command.Code, command.OwnerCode) is not null)
-        {
-            return ProductErrors.AlreadyExistsForTheOwner;
-        }
-
         await _repository.Insert(_mapper.Map<Product>(command));
 
         return _mapper.Map<ProductResponse>(await _repository.GetByOwnerAndCode(command.Code, command.OwnerCode));

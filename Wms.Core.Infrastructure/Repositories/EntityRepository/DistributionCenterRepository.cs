@@ -28,4 +28,13 @@ public class DistributionCenterRepository : GenericRepository<DistributionCenter
 
         return result.FirstOrDefault();
     }
+
+    public async Task<DistributionCenter?> DocumentIsAlreadyAllocated(string code, string document)
+    {
+        expression = e => e.Code != code && e.Document == document;
+
+        var result = await Get(expression);
+
+        return result.FirstOrDefault();
+    }
 }

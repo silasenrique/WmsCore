@@ -24,7 +24,6 @@ public class ProductController : MainController
         return Ok(await _sender.Send(query));
     }
 
-
     [HttpDelete]
     public async Task<ActionResult> Delete(ProductDeleteCommand command)
     {

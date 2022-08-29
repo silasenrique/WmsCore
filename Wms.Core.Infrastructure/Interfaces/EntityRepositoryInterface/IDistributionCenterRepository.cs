@@ -6,4 +6,5 @@ public interface IDistributionCenterRepository : IGenericRepository<Distribution
 {
     Task<DistributionCenter?> GetByCode(string code);
     Task<DistributionCenter?> GetByDocument(string document);
+    Task<DistributionCenter?> DocumentIsAlreadyAllocated(string code, string document);
 }

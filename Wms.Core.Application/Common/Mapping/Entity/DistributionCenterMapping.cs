@@ -1,7 +1,7 @@
 using Mapster;
-using Wms.Core.Application.Commands.Entity.DistributionCenterCommand.Create;
-using Wms.Core.Application.Commands.Entity.DistributionCenterCommand.Delete;
-using Wms.Core.Application.Commands.Entity.DistributionCenterCommand.Update;
+using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Create;
+using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Delete;
+using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Update;
 using Wms.Core.Application.Contracts.Entity.DistributionCenter;
 using Wms.Core.Domain.Entities.Entity;
 

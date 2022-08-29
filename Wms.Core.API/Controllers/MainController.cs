@@ -17,7 +17,7 @@ public class MainController : ControllerBase
         return Problem(errors[0]);
     }
 
-    public ActionResult Problem(Error error)
+    protected ActionResult Problem(Error error)
     {
         var statusCode = error.Type switch
         {
@@ -30,7 +30,7 @@ public class MainController : ControllerBase
         return Problem(statusCode: statusCode, title: error.Description);
     }
 
-    private ActionResult ValidationProblem(List<Error> errors)
+    protected ActionResult ValidationProblem(List<Error> errors)
     {
         var modelStateDictionary = new ModelStateDictionary();
 

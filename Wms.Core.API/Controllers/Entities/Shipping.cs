@@ -1,9 +1,9 @@
 using ErrorOr;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Wms.Core.Application.Commands.Entity.ShippingCommand.Create;
-using Wms.Core.Application.Commands.Entity.ShippingCommand.Delete;
-using Wms.Core.Application.Commands.Entity.ShippingCommand.Update;
+using Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Create;
+using Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Delete;
+using Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Update;
 using Wms.Core.Application.Queries.Entity.ShippingQueries;
 
 namespace Wms.Core.API.Controllers.Entities;
@@ -58,5 +58,4 @@ public class ShippingController : MainController
 
         return NoContent();
     }
-
 }

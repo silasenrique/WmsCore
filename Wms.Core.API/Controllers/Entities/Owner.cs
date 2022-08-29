@@ -1,8 +1,8 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Wms.Core.Application.Commands.Entity.OwnerCommand.Delete;
-using Wms.Core.Application.Commands.Entity.OwnerCommand.Update;
-using Wms.Core.Application.Commands.Entity.OwnerCreateCommand.Create;
+using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Create;
+using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Delete;
+using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Update;
 using Wms.Core.Application.Queries.Entity.OwnerQueries;
 
 namespace Wms.Core.API.Controllers.Entities;

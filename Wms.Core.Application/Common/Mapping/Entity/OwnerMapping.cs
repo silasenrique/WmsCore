@@ -1,7 +1,7 @@
 using Mapster;
-using Wms.Core.Application.Commands.Entity.OwnerCommand.Delete;
-using Wms.Core.Application.Commands.Entity.OwnerCommand.Update;
-using Wms.Core.Application.Commands.Entity.OwnerCreateCommand.Create;
+using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Create;
+using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Delete;
+using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Update;
 using Wms.Core.Application.Contracts.Entity.Owner;
 using Wms.Core.Domain.Entities.Entity;
 using Wms.Core.Domain.Enums;
