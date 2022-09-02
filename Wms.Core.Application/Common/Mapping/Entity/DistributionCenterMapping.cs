@@ -21,7 +21,7 @@ public class DistributionCenterMapping : IRegister
 
         config.NewConfig<DistributionCenterDeleteCommand, DistributionCenter>()
             .MapToConstructor(true)
-            .ConstructUsing(src => new DistributionCenter(src.Id));
+            .ConstructUsing(src => new DistributionCenter(src.Code));
 
         config.NewConfig<DistributionCenter, DistributionCenterResponse>()
               .Map(dest => dest.CreationDate,

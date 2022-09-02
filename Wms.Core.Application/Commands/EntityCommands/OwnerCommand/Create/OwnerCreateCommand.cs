@@ -1,13 +1,15 @@
-using ErrorOr;
-using Wms.Core.Application.Contracts.Entity.Owner;
-using Wms.Core.Application.Common.Interfaces.Messaging;
+using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Common;
 
 namespace Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Create;
 
-public record OwnerCreateCommand(
-    string Code,
-    string Name,
-    string Document,
-    int TypeDoc,
-    int Status) : ICommand<ErrorOr<OwnerResponse>>;
-
+public record OwnerCreateCommand : OwnerWriteCommonWriteCommand
+{
+    public OwnerCreateCommand(
+        string Code,
+        string Name,
+        string Document,
+        int TypeDoc,
+        int Status) : base(Code, Name, Document, TypeDoc, Status)
+    {
+    }
+}

@@ -4,7 +4,7 @@ using Wms.Core.Application.Contracts.Entity.DistributionCenter;
 
 namespace Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Common;
 
-public record DistributionCenterWriteCommonCommand(
+public record DistributionCenterCommonWriteCommand(
     string? Code,
     string? Name,
     string? Document) : ICommand<ErrorOr<DistributionCenterResponse>>;

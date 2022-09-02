@@ -6,4 +6,5 @@ public interface IShippingRepository : IGenericRepository<Shipping>
 {
     Task<Shipping?> GetByCode(string code);
     Task<Shipping?> GetByDocument(string document);
+    Task<Shipping?> DocumentIsAlreadyAllocated(string code, string document);
 }

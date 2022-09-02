@@ -1,12 +1,13 @@
-using ErrorOr;
-using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.Product.Product;
+using Wms.Core.Application.Commands.ProductCommands.ProductCommand.Common;
 
 namespace Wms.Core.Application.Commands.ProductCommands.ProductCommand.Update;
 
-public record ProductUpdateCommand(
-    int Id,
-    string? Code,
-    string? Description,
-    int Status,
-    string? OwnerCode) : ICommand<ErrorOr<ProductResponse>>;
+public record ProductUpdateCommand : ProductCommonWriteCommand
+{
+    public int Id { get; set; }
+
+    public ProductUpdateCommand(int id, string OwnerCode, string Code, string Description, int Status) : base(OwnerCode, Code, Description, Status)
+    {
+        Id = id;
+    }
+}

@@ -2,7 +2,7 @@ using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Com
 
 namespace Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Update;
 
-public record DistributionCenterUpdateCommand : DistributionCenterWriteCommonCommand
+public record DistributionCenterUpdateCommand : DistributionCenterCommonWriteCommand
 {
     public int Id { get; set; }
 

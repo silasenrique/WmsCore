@@ -7,24 +7,33 @@ namespace Wms.Core.Infrastructure.Repositories.EntityRepository;
 
 public class ShippingRepository : GenericRepository<Shipping>, IShippingRepository
 {
-    Expression<Func<Shipping, bool>> Expression { get; set; }
+    Expression<Func<Shipping, bool>> expression { get; set; }
 
     public ShippingRepository(ApplicationContext dbContext) : base(dbContext) { }
 
     public async Task<Shipping?> GetByCode(string code)
     {
-        Expression = e => e.Code == code;
+        expression = e => e.Code == code;
 
-        var result = await Get(Expression);
+        var result = await Get(expression);
 
         return result.FirstOrDefault();
     }
 
     public async Task<Shipping?> GetByDocument(string document)
     {
-        Expression = e => e.Document == document;
+        expression = e => e.Document == document;
 
-        var result = await Get(Expression);
+        var result = await Get(expression);
+
+        return result.FirstOrDefault();
+    }
+
+    public async Task<Shipping?> DocumentIsAlreadyAllocated(string code, string document)
+    {
+        expression = e => e.Code != code && e.Document == document;
+
+        var result = await Get(expression);
 
         return result.FirstOrDefault();
     }

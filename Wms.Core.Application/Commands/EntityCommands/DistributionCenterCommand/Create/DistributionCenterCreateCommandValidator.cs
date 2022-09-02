@@ -5,11 +5,11 @@ using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
 namespace Wms.Core.Application.Commands.Entity.DistributionCenterCommand;
 
-public class DistributionCenterCreateCommandValidation : AbstractValidator<DistributionCenterCreateCommand>
+public class DistributionCenterCreateCommandValidator : AbstractValidator<DistributionCenterCreateCommand>
 {
     readonly IDistributionCenterRepository _repository;
 
-    public DistributionCenterCreateCommandValidation(IDistributionCenterRepository repository)
+    public DistributionCenterCreateCommandValidator(IDistributionCenterRepository repository)
     {
         _repository = repository;
         Validate();
@@ -17,7 +17,7 @@ public class DistributionCenterCreateCommandValidation : AbstractValidator<Distr
 
     void Validate()
     {
-        Include(new DistributionCenterWriteCommandValidation());
+        Include(new DistributionCenterCommonWriteCommandValidator());
 
         RuleFor(d => d.Code)
             .Cascade(CascadeMode.Stop)
@@ -32,15 +32,11 @@ public class DistributionCenterCreateCommandValidation : AbstractValidator<Distr
 
     async Task<bool> DocumentAlreadyExists(string document)
     {
-        var exist = await _repository.GetByDocument(document);
-
-        return exist is not null;
+        return await _repository.GetByDocument(document) is not null;
     }
 
     async Task<bool> CodeAlreadyExists(string code)
     {
-        var exist = await _repository.GetByCode(code);
-
-        return exist is not null;
+        return await _repository.GetByCode(code) is not null;
     }
 }

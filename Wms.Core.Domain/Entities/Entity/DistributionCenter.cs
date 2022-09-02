@@ -2,9 +2,9 @@ namespace Wms.Core.Domain.Entities.Entity;
 
 public class DistributionCenter
 {
-    public DistributionCenter(int id)
+    public DistributionCenter(string code)
     {
-        Id = id;
+        Code = code;
     }
 
     public DistributionCenter(string code, string name, string document)

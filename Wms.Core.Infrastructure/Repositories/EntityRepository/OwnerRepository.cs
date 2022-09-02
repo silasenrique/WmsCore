@@ -7,11 +7,31 @@ namespace Wms.Core.Infrastructure.Repositories.EntityRepository;
 
 public class OwnerRepository : GenericRepository<Owner>, IOwnerRepository
 {
+    Expression<Func<Owner, bool>> expression { get; set; }
+
     public OwnerRepository(ApplicationContext context) : base(context) { }
 
     public async Task<Owner?> GetByCode(string code)
     {
-        Expression<Func<Owner, bool>> expression = e => e.Code == code;
+        expression = e => e.Code == code;
+
+        var result = await Get(expression);
+
+        return result.FirstOrDefault();
+    }
+
+    public async Task<Owner?> GetByDocument(string document)
+    {
+        expression = e => e.Document == document;
+
+        var result = await Get(expression);
+
+        return result.FirstOrDefault();
+    }
+
+    public async Task<Owner?> DocumentIsAlreadyAllocated(string code, string document)
+    {
+        expression = e => e.Code != code && e.Document == document;
 
         var result = await Get(expression);
 

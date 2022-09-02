@@ -2,9 +2,9 @@ using FluentValidation;
 
 namespace Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Common;
 
-public class DistributionCenterWriteCommandValidation : AbstractValidator<DistributionCenterWriteCommonCommand>
+public class DistributionCenterCommonWriteCommandValidator : AbstractValidator<DistributionCenterCommonWriteCommand>
 {
-    public DistributionCenterWriteCommandValidation()
+    public DistributionCenterCommonWriteCommandValidator()
     {
         RuleFor(d => d.Code).Cascade(CascadeMode.Stop)
            .NotEmpty().WithMessage("deve ser informado!")
