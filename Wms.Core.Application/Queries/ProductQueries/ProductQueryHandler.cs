@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.Product.Product;
+using Wms.Core.Application.Contracts.Product.ProductContract;
 using Wms.Core.Domain.Entities.Product;
 using Wms.Core.Domain.Enums;
 using Wms.Core.Infrastructure.Interfaces.ProductRepositoryInterface;

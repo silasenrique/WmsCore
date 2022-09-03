@@ -1,5 +1,5 @@
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.Product.Product;
+using Wms.Core.Application.Contracts.Product.ProductContract;
 
 namespace Wms.Core.Application.Queries.ProductQueries;
 

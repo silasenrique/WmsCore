@@ -2,9 +2,9 @@ using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 using MapsterMapper;
 using Wms.Core.Domain.Entities.Entity;
 using ErrorOr;
-using Wms.Core.Application.Contracts.Entity.DistributionCenter;
 using Wms.Core.Application.Common.Interfaces.Messaging;
 using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Create;
+using Wms.Core.Application.Contracts.EntityContract.DistributionCenter;
 
 namespace Wms.Core.Application.Commands.Entity.DistributionCenterCommand.Create;
 

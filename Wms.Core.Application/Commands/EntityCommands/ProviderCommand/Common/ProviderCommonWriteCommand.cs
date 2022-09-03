@@ -1,6 +1,6 @@
 using ErrorOr;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.Entity.Provider;
+using Wms.Core.Application.Contracts.EntityContract.Provider;
 
 namespace Wms.Core.Application.Commands.EntityCommands.ProviderCommand.Common;
 

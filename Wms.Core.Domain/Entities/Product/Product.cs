@@ -39,5 +39,4 @@ public class Product
     public GlobalStatus Status { get; set; }
     public long CreationDate { get; set; }
     public long LastChangeDate { get; set; }
-
 }

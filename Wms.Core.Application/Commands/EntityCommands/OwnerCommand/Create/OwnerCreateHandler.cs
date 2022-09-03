@@ -1,7 +1,7 @@
 using ErrorOr;
 using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.Entity.Owner;
+using Wms.Core.Application.Contracts.EntityContract.Owner;
 using Wms.Core.Domain.Entities.Entity;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 

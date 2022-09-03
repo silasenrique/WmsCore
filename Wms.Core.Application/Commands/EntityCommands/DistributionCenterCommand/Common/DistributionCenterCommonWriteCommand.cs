@@ -1,6 +1,6 @@
 using ErrorOr;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.Entity.DistributionCenter;
+using Wms.Core.Application.Contracts.EntityContract.DistributionCenter;
 
 namespace Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Common;
 

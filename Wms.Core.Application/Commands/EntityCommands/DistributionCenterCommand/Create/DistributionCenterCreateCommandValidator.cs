@@ -27,7 +27,7 @@ public class DistributionCenterCreateCommandValidator : AbstractValidator<Distri
         RuleFor(d => d.Document)
             .Cascade(CascadeMode.Stop)
             .MustAsync(async (doc, cancellation) => { bool result = await DocumentAlreadyExists(doc); return !result; })
-            .WithMessage("valor já foi informado anteriormente!");
+            .WithMessage("{PropertyValue} já foi informado anteriormente para outro centro de distribuição!");
     }
 
     async Task<bool> DocumentAlreadyExists(string document)
