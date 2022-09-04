@@ -20,6 +20,8 @@ public class UnitizerTypeMapping : IEntityTypeConfiguration<UnitizerType>
         builder.Property(u => u.WidthUnit);
         builder.Property(u => u.Length);
         builder.Property(u => u.LengthUnit);
+        builder.Property(u => u.LastChangeDate);
+        builder.Property(u => u.CreationDate);
 
         builder.ToTable("UnitizerType");
     }
