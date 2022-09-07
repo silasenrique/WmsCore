@@ -13,4 +13,6 @@ public record UnitizerTypeResponse(
     float Width,
     SizeUnit WidthUnit,
     float Length,
-    SizeUnit LengthUnit);
+    SizeUnit LengthUnit,
+    string CreationDate,
+    string LastChangeDate);

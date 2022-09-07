@@ -1,0 +1,16 @@
+PUT {{host}}/unitizer-type HTTP/1.1
+Content-Type: application/json; charset=utf-8
+
+{
+    "id": 1,
+    "code": "UN",
+    "description": "Menor unidade de um produto",
+    "maximumWeight": 0,
+    "weightUnit": "KG",
+    "height": 1,
+    "heightUnit": "CM",
+    "width": 1,
+    "widthUnit": "CM",
+    "length": 1,
+    "lengthUnit": "cm"
+}

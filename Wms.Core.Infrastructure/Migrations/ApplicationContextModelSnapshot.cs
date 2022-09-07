@@ -625,34 +625,52 @@ namespace Wms.Core.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<long>("CreationDate")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<float>("Height")
                         .HasColumnType("real");
 
-                    b.Property<int>("HeightUnit")
-                        .HasColumnType("integer");
+                    b.Property<string>("HeightUnit")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar");
+
+                    b.Property<long>("LastChangeDate")
+                        .HasColumnType("bigint");
 
                     b.Property<float>("Length")
                         .HasColumnType("real");
 
-                    b.Property<int>("LengthUnit")
-                        .HasColumnType("integer");
+                    b.Property<string>("LengthUnit")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar");
 
                     b.Property<float>("MaximumWeight")
                         .HasColumnType("real");
 
-                    b.Property<int>("WeightUnit")
-                        .HasColumnType("integer");
+                    b.Property<string>("WeightUnit")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar");
 
                     b.Property<float>("Width")
                         .HasColumnType("real");
 
-                    b.Property<int>("WidthUnit")
-                        .HasColumnType("integer");
+                    b.Property<string>("WidthUnit")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Code")
+                        .IsUnique();
 
                     b.ToTable("UnitizerType");
                 });

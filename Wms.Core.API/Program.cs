@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Wms.Core.API.Configuration;
 using Wms.Core.Application;
@@ -14,7 +15,8 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
             o => o.MigrationsAssembly("Wms.Core.Infrastructure"));
 });
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ResolveDependencies();

@@ -1,10 +1,14 @@
 using ErrorOr;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Create;
+using Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Delete;
+using Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Update;
+using Wms.Core.Application.Queries.UnitizerQueries.UnitizerTypeQueries;
 
 namespace Wms.Core.API.Controllers.UnitizerController;
 
-[Route("api/unitizer")]
+[Route("api/unitizer-type")]
 public class UnitizerTypeController : MainController
 {
     readonly ISender _sender;

@@ -11,7 +11,7 @@ public class UnitizerTypeMapping : IEntityTypeConfiguration<UnitizerType>
         builder.HasKey(u => u.Id);
 
         builder.Property(u => u.Code).IsRequired().HasMaxLength(4);
-        builder.Property(u => u.Description).HasMaxLength(200);
+        builder.Property(u => u.Description).HasMaxLength(100);
         builder.Property(u => u.MaximumWeight);
         builder.Property(u => u.WeightUnit);
         builder.Property(u => u.Height);

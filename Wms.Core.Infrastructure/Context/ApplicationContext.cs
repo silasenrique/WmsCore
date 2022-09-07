@@ -7,6 +7,7 @@ using Wms.Core.Domain.Entities.Unitizer;
 using Wms.Core.Domain.Entities.Warehouse;
 using Wms.Core.Infrastructure.Context.Configure.Entity;
 using Wms.Core.Infrastructure.Context.Configure.ProductConfiguration;
+using Wms.Core.Infrastructure.Context.Configure.UnitizerConfigure;
 using Wms.Core.Infrastructure.Context.Configure.Warehouse;
 
 namespace Wms.Core.Infrastructure.Context;
@@ -23,6 +24,7 @@ public class ApplicationContext : DbContext
     public DbSet<Inventory>? Stock { get; set; }
     public DbSet<Zone>? Zone { get; set; }
     public DbSet<Unitizer>? Unitizer { get; set; }
+    public DbSet<UnitizerType>? UnitizerType { get; set; }
     public DbSet<StockAddress>? StockAddresses { get; set; }
     public DbSet<TypeAddress>? TypeAddress { get; set; }
 
@@ -48,10 +50,13 @@ public class ApplicationContext : DbContext
 
         //* Warehouse
         ZoneConfiguration.ConfigureConstraints(modelBuilder);
-        UnitizerConfiguration.ConfigureConstraints(modelBuilder);
         TypeAddressConfiguration.ConfigureConstraints(modelBuilder);
         StockAddressConfiguration.ConfigureConstraints(modelBuilder);
         StockConfiguration.ConfigureConstraints(modelBuilder);
+
+        // Unitizer
+        UnitizerTypeConfiguration.ConfigureConstraints(modelBuilder);
+        UnitizerConfiguration.ConfigureConstraints(modelBuilder);
 
         base.OnModelCreating(modelBuilder);
     }

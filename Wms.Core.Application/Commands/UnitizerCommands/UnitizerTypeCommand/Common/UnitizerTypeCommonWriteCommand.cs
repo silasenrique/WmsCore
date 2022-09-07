@@ -6,8 +6,8 @@ using Wms.Core.Domain.Enums;
 namespace Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Common;
 
 public record UnitizerTypeCommonWriteCommand(
-        string Code,
-        string Description,
+        string? Code,
+        string? Description,
         float MaximumWeight,
         WeightUnit WeightUnit,
         float Height,

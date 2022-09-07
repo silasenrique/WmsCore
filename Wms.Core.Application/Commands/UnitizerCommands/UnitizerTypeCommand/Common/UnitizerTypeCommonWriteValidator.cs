@@ -18,11 +18,11 @@ public class UnitizerTypeCommonWriteValidator : AbstractValidator<UnitizerTypeCo
             .MaximumLength(100)
             .WithMessage("excedeu a capacidade máxima, só aceita até 100 caracteres");
 
-        RuleFor(u => new { u.MaximumWeight, u.WeightUnit })
-            .Cascade(CascadeMode.Stop)
-            .Must(u => u.WeightUnit == 0 && u.MaximumWeight > 0)
-            .WithMessage("é necessário informar um valor para o atributo maximumWeight")
-            .Must(u => u.WeightUnit != 0 && u.MaximumWeight == 0)
-            .WithMessage("é necessário informar uma unidade de peso");
+        // RuleFor(u => new { u.MaximumWeight, u.WeightUnit })
+        //     .Cascade(CascadeMode.Stop)
+        //     .Must(u => u.WeightUnit == 0 && u.MaximumWeight > 0)
+        //     .WithMessage("é necessário informar um valor para o atributo maximumWeight")
+        //     .Must(u => u.WeightUnit != 0 && u.MaximumWeight == 0)
+        //     .WithMessage("é necessário informar uma unidade de peso");
     }
 }

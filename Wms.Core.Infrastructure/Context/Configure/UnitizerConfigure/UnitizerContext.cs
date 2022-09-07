@@ -3,7 +3,7 @@ using Wms.Core.Domain.Entities.Address;
 using Wms.Core.Domain.Entities.Entity;
 using Wms.Core.Domain.Entities.Unitizer;
 
-namespace Wms.Core.Infrastructure.Context.Configure.Warehouse;
+namespace Wms.Core.Infrastructure.Context.Configure.UnitizerConfigure;
 
 public static class UnitizerConfiguration
 {
