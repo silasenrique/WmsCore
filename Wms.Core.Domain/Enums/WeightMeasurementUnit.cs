@@ -2,7 +2,7 @@ namespace Wms.Core.Domain.Enums;
 
 public enum WeightUnit
 {
-    Gram,
-    Kilo,
-    Tonne
+    GR = 1,
+    KG,
+    T
 }

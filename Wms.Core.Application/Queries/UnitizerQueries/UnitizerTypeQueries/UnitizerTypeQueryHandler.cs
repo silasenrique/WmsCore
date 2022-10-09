@@ -10,12 +10,10 @@ namespace Wms.Core.Application.Queries.UnitizerQueries.UnitizerTypeQueries;
 public class UnitizerTypeQueryHandler : ICommandHandler<UnitizerTypeQuery, List<UnitizerTypeResponse>>
 {
     private readonly IUnitizerTypeRepository _repository;
-    private readonly IMapper _mapper;
 
-    public UnitizerTypeQueryHandler(IUnitizerTypeRepository repository, IMapper mapper)
+    public UnitizerTypeQueryHandler(IUnitizerTypeRepository repository)
     {
         _repository = repository;
-        _mapper = mapper;
     }
 
     public async Task<List<UnitizerTypeResponse>> Handle(UnitizerTypeQuery query, CancellationToken cancellationToken)
@@ -28,6 +26,28 @@ public class UnitizerTypeQueryHandler : ICommandHandler<UnitizerTypeQuery, List<
             (e.LengthUnit == query.LengthUnit || query.LengthUnit == 0) &&
             (e.WeightUnit == query.WeightUnit || query.WeightUnit == 0);
 
-        return _mapper.Map<List<UnitizerTypeResponse>>(await _repository.Get(expression));
+        var response = await _repository.Get(expression);
+
+        List<UnitizerTypeResponse> responses = new();
+
+        response
+            .ToList()
+            .ForEach(u => responses.Add(
+                new UnitizerTypeResponse(
+                    u.Id, 
+                    u.Code, 
+                    u.Description, 
+                    u.MaximumWeight, 
+                    u.WeightUnit, 
+                    u.Height, 
+                    u.HeightUnit, 
+                    u.Width, 
+                    u.WidthUnit, 
+                    u.Length, 
+                    u.LengthUnit, 
+                    new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(u.CreationDate).ToLocalTime().ToString(), 
+                    new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(u.LastChangeDate).ToLocalTime().ToString())));
+
+        return responses;
     }
 }

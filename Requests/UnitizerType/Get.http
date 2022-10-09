@@ -1,1 +1,1 @@
-GET {{host}}/unitizer-type?code=CODE
+GET {{name}}/unitizer-type
