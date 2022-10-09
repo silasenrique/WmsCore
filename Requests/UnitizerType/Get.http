@@ -1,1 +1,1 @@
-GET {{name}}/unitizer-type
+GET https://localhost:7224/api/unitizer-type

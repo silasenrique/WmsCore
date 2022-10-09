@@ -9,19 +9,44 @@ namespace Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Cre
 
 public class UnitizerTypeCreateCommandHandler : ICommandHandler<UnitizerTypeCreateCommand, ErrorOr<UnitizerTypeResponse>>
 {
-    readonly IUnitizerTypeRepository _repository;
-    readonly IMapper _mapper;
+    private readonly IUnitizerTypeRepository _repository;
 
-    public UnitizerTypeCreateCommandHandler(IUnitizerTypeRepository repository, IMapper mapper)
+    public UnitizerTypeCreateCommandHandler(IUnitizerTypeRepository repository)
     {
         _repository = repository;
-        _mapper = mapper;
     }
 
     public async Task<ErrorOr<UnitizerTypeResponse>> Handle(UnitizerTypeCreateCommand command, CancellationToken cancellationToken)
     {
-        await _repository.Insert(_mapper.Map<UnitizerType>(command));
+        UnitizerType newUnitizerType = new(
+            command.Code,
+            command.Description,
+            command.MaximumWeight,
+            command.WeightUnit,
+            command.Height,
+            command.HeightUnit,
+            command.Width,
+            command.WidthUnit,
+            command.Length,
+            command.LengthUnit);
+        
+        await _repository.Insert(newUnitizerType);
 
-        return _mapper.Map<UnitizerTypeResponse>(await _repository.GetByCode(command.Code));
+        var unitizerType = await _repository.GetByCode(command.Code);
+        
+        return new UnitizerTypeResponse(
+            unitizerType.Id, 
+            unitizerType.Code, 
+            unitizerType.Description, 
+            unitizerType.MaximumWeight, 
+            unitizerType.WeightUnit, 
+            unitizerType.Height, 
+            unitizerType.HeightUnit, 
+            unitizerType.Width, 
+            unitizerType.WidthUnit, 
+            unitizerType.Length, 
+            unitizerType.LengthUnit, 
+            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(unitizerType.CreationDate).ToLocalTime().ToString(), 
+            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(unitizerType.LastChangeDate).ToLocalTime().ToString());
     }
 }
