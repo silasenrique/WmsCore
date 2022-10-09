@@ -1,7 +1,5 @@
 using ErrorOr;
-using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Domain.Entities.Unitizer;
 using Wms.Core.Infrastructure.Interfaces.UnitizerRepositoryInterface;
 
 namespace Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Delete;

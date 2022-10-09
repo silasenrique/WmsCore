@@ -24,19 +24,19 @@ public class UnitizerTypeMapping : IRegister
         //                                             src.Length,
         //                                             src.LengthUnit));
 
-        config.NewConfig<UnitizerTypeUpdateCommand, UnitizerType>()
-            .MapToConstructor(true)
-            .ConstructUsing(src => new UnitizerType(src.Id,
-                                                    src.Code,
-                                                    src.Description,
-                                                    src.MaximumWeight,
-                                                    src.WeightUnit,
-                                                    src.Height,
-                                                    src.HeightUnit,
-                                                    src.Width,
-                                                    src.WidthUnit,
-                                                    src.Length,
-                                                    src.LengthUnit));
+        // config.NewConfig<UnitizerTypeUpdateCommand, UnitizerType>()
+        //    .MapToConstructor(true)
+        //    .ConstructUsing(src => new UnitizerType(src.Id,
+        //                                            src.Code,
+        //                                            src.Description,
+        //                                            src.MaximumWeight,
+        //                                            src.WeightUnit,
+        //                                            src.Height,
+        //                                            src.HeightUnit,
+        //                                            src.Width,
+        //                                            src.WidthUnit,
+        //                                            src.Length,
+        //                                            src.LengthUnit));
 
         // config.NewConfig<UnitizerTypeDeleteCommand, UnitizerType>()
         //     .MapToConstructor(true)
