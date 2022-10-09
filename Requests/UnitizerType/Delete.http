@@ -1,1 +1,1 @@
-DELETE {{host}}/unitizer-type/code
+DELETE https://localhost:7224/api/unitizer-type?code=co1e

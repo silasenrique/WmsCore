@@ -49,7 +49,7 @@ public class UnitizerTypeController : MainController
     }
 
     [HttpDelete]
-    public async Task<ActionResult> Delete(UnitizerTypeDeleteCommand command)
+    public async Task<ActionResult> Delete([FromQuery] UnitizerTypeDeleteCommand command)
     {
         var deletedError = await _sender.Send(command);
 

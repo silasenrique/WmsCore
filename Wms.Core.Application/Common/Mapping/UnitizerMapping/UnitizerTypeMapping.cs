@@ -38,9 +38,9 @@ public class UnitizerTypeMapping : IRegister
                                                     src.Length,
                                                     src.LengthUnit));
 
-        config.NewConfig<UnitizerTypeDeleteCommand, UnitizerType>()
-            .MapToConstructor(true)
-            .ConstructUsing(src => new UnitizerType(src.Code));
+        // config.NewConfig<UnitizerTypeDeleteCommand, UnitizerType>()
+        //     .MapToConstructor(true)
+        //     .ConstructUsing(src => new UnitizerType(src.Code));
 
         // config.NewConfig<UnitizerType, UnitizerTypeResponse>()
         //       .Map(dest => dest.CreationDate,

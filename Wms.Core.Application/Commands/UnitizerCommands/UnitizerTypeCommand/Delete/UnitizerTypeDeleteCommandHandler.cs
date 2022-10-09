@@ -9,17 +9,15 @@ namespace Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Del
 public class UnitizerTypeDeleteCommandHandler : ICommandHandler<UnitizerTypeDeleteCommand, Error?>
 {
     private readonly IUnitizerTypeRepository _repository;
-    private readonly IMapper _mapper;
 
-    public UnitizerTypeDeleteCommandHandler(IUnitizerTypeRepository repository, IMapper mapper)
+    public UnitizerTypeDeleteCommandHandler(IUnitizerTypeRepository repository)
     {
         _repository = repository;
-        _mapper = mapper;
     }
 
     public async Task<Error?> Handle(UnitizerTypeDeleteCommand command, CancellationToken cancellationToken)
     {
-        await _repository.Delete(_mapper.Map<UnitizerType>(command.Code));
+        await _repository.Delete(await _repository.GetByCode(command.Code));
 
         return null;
     }
