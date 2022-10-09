@@ -15,7 +15,10 @@ public class UnitizerTypeDeleteCommandHandler : ICommandHandler<UnitizerTypeDele
 
     public async Task<Error?> Handle(UnitizerTypeDeleteCommand command, CancellationToken cancellationToken)
     {
-        await _repository.Delete(await _repository.GetByCode(command.Code));
+        var willBeDeleted = await _repository.GetByCode(command.Code);
+        if (willBeDeleted is null) return null;
+        
+        await _repository.Delete(willBeDeleted);
 
         return null;
     }
