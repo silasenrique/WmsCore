@@ -1,1 +1,1 @@
-GET {{host}}/cd
+GET https://localhost:7224/api/cd

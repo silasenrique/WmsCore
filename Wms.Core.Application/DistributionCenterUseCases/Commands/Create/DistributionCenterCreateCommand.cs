@@ -1,6 +1,6 @@
-using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Common;
+using Wms.Core.Application.DistributionCenterUseCases.Commands.Common;
 
-namespace Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Create;
+namespace Wms.Core.Application.DistributionCenterUseCases.Commands.Create;
 
 public record DistributionCenterCreateCommand : DistributionCenterCommonWriteCommand
 {

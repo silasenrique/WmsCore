@@ -1,6 +1,6 @@
-using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Common;
+using Wms.Core.Application.DistributionCenterUseCases.Commands.Common;
 
-namespace Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Update;
+namespace Wms.Core.Application.DistributionCenterUseCases.Commands.Update;
 
 public record DistributionCenterUpdateCommand : DistributionCenterCommonWriteCommand
 {

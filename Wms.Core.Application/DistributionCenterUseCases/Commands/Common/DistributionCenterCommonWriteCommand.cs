@@ -1,8 +1,8 @@
 using ErrorOr;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.EntityContract.DistributionCenter;
+using Wms.Core.Application.DistributionCenterUseCases.Contract;
 
-namespace Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Common;
+namespace Wms.Core.Application.DistributionCenterUseCases.Commands.Common;
 
 public record DistributionCenterCommonWriteCommand(
     string? Code,

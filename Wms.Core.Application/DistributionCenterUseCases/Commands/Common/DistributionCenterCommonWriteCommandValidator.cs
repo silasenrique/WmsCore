@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Common;
+namespace Wms.Core.Application.DistributionCenterUseCases.Commands.Common;
 
 public class DistributionCenterCommonWriteCommandValidator : AbstractValidator<DistributionCenterCommonWriteCommand>
 {

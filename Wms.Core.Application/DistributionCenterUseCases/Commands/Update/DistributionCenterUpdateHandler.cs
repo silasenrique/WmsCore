@@ -1,11 +1,11 @@
 using ErrorOr;
 using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.EntityContract.DistributionCenter;
+using Wms.Core.Application.DistributionCenterUseCases.Contract;
 using Wms.Core.Domain.Entities.Entity;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Update;
+namespace Wms.Core.Application.DistributionCenterUseCases.Commands.Update;
 
 public class DistributionCenterUpdateHandler : ICommandHandler<DistributionCenterUpdateCommand, ErrorOr<DistributionCenterResponse>>
 {

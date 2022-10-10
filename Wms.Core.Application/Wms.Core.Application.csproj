@@ -21,4 +21,26 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DistributionCenterUseCases\Commands" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Commands\EntityCommands\DistributionCenterCommand\**" />
+    <Compile Remove="Queries\EntityQuery\DistributionCenterQueries\**" />
+    <Compile Remove="Contracts\EntityContract\DistributionCenter\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Commands\EntityCommands\DistributionCenterCommand\**" />
+    <EmbeddedResource Remove="Queries\EntityQuery\DistributionCenterQueries\**" />
+    <EmbeddedResource Remove="Contracts\EntityContract\DistributionCenter\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Commands\EntityCommands\DistributionCenterCommand\**" />
+    <None Remove="Queries\EntityQuery\DistributionCenterQueries\**" />
+    <None Remove="Contracts\EntityContract\DistributionCenter\**" />
+  </ItemGroup>
+
 </Project>

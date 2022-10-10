@@ -1,10 +1,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Create;
-using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Delete;
-using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Update;
-using Wms.Core.Application.Contracts.EntityContract.DistributionCenter;
-using Wms.Core.Application.Queries.EntityQuery.DistributionCenterQueries;
+using Wms.Core.Application.DistributionCenterUseCases.Commands.Create;
+using Wms.Core.Application.DistributionCenterUseCases.Commands.Delete;
+using Wms.Core.Application.DistributionCenterUseCases.Commands.Update;
+using Wms.Core.Application.DistributionCenterUseCases.Contract;
+using Wms.Core.Application.DistributionCenterUseCases.Queries;
 
 namespace Wms.Core.API.Controllers.EntityController;
 

@@ -2,7 +2,7 @@ using ErrorOr;
 using MediatR;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Delete;
+namespace Wms.Core.Application.DistributionCenterUseCases.Commands.Delete;
 
 public class DistributionCenterDeleteHandler : IRequestHandler<DistributionCenterDeleteCommand, Error?>
 {

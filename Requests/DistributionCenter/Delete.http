@@ -1,1 +1,1 @@
-DELETE {{host}}/cd?code=994
+DELETE https://localhost:7224/api/cd?code=POA

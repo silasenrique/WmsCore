@@ -1,9 +1,8 @@
 using FluentValidation;
-using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Common;
-using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Create;
+using Wms.Core.Application.DistributionCenterUseCases.Commands.Common;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.Entity.DistributionCenterCommand;
+namespace Wms.Core.Application.DistributionCenterUseCases.Commands.Create;
 
 public class DistributionCenterCreateCommandValidator : AbstractValidator<DistributionCenterCreateCommand>
 {

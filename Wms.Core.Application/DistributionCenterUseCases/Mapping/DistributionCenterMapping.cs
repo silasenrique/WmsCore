@@ -1,11 +1,11 @@
 using Mapster;
-using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Create;
-using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Delete;
-using Wms.Core.Application.Commands.EntityCommands.DistributionCenterCommand.Update;
-using Wms.Core.Application.Contracts.EntityContract.DistributionCenter;
+using Wms.Core.Application.DistributionCenterUseCases.Commands.Create;
+using Wms.Core.Application.DistributionCenterUseCases.Commands.Delete;
+using Wms.Core.Application.DistributionCenterUseCases.Commands.Update;
+using Wms.Core.Application.DistributionCenterUseCases.Contract;
 using Wms.Core.Domain.Entities.Entity;
 
-namespace Wms.Core.Application.Common.Mapping.EntityMapping;
+namespace Wms.Core.Application.DistributionCenterUseCases.Mapping;
 
 public class DistributionCenterMapping : IRegister
 {
