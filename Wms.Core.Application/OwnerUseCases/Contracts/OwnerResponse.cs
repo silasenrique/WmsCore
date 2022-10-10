@@ -1,4 +1,4 @@
-namespace Wms.Core.Application.Contracts.EntityContract.Owner;
+namespace Wms.Core.Application.OwnerUseCases.Contracts;
 
 public record OwnerResponse(
     int Id,

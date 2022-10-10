@@ -1,10 +1,9 @@
 using ErrorOr;
 using MapsterMapper;
-using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Delete;
 using Wms.Core.Application.Common.Interfaces.Messaging;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.Entity.OwnerCommand.Delete;
+namespace Wms.Core.Application.OwnerUseCases.Commands.Delete;
 
 public class OwnerDeleteHandler : ICommandHandler<OwnerDeleteCommand, Error?>
 {

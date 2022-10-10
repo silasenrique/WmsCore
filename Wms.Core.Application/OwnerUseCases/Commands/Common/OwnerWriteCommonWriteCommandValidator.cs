@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Common;
+namespace Wms.Core.Application.OwnerUseCases.Commands.Common;
 
 public class OwnerWriteCommonWriteCommandValidator : AbstractValidator<OwnerWriteCommonWriteCommand>
 {

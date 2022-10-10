@@ -23,24 +23,34 @@
 
   <ItemGroup>
     <Folder Include="DistributionCenterUseCases\Commands" />
+    <Folder Include="OwnerUseCases\Commands" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Commands\EntityCommands\DistributionCenterCommand\**" />
     <Compile Remove="Queries\EntityQuery\DistributionCenterQueries\**" />
     <Compile Remove="Contracts\EntityContract\DistributionCenter\**" />
+    <Compile Remove="Commands\EntityCommands\OwnerCommand\**" />
+    <Compile Remove="Contracts\EntityContract\Owner\**" />
+    <Compile Remove="Queries\EntityQuery\OwnerQueries\**" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Remove="Commands\EntityCommands\DistributionCenterCommand\**" />
     <EmbeddedResource Remove="Queries\EntityQuery\DistributionCenterQueries\**" />
     <EmbeddedResource Remove="Contracts\EntityContract\DistributionCenter\**" />
+    <EmbeddedResource Remove="Commands\EntityCommands\OwnerCommand\**" />
+    <EmbeddedResource Remove="Contracts\EntityContract\Owner\**" />
+    <EmbeddedResource Remove="Queries\EntityQuery\OwnerQueries\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Commands\EntityCommands\DistributionCenterCommand\**" />
     <None Remove="Queries\EntityQuery\DistributionCenterQueries\**" />
     <None Remove="Contracts\EntityContract\DistributionCenter\**" />
+    <None Remove="Commands\EntityCommands\OwnerCommand\**" />
+    <None Remove="Contracts\EntityContract\Owner\**" />
+    <None Remove="Queries\EntityQuery\OwnerQueries\**" />
   </ItemGroup>
 
 </Project>

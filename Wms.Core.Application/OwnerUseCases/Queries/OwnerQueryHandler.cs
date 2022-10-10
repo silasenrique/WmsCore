@@ -1,11 +1,11 @@
 using System.Linq.Expressions;
 using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.EntityContract.Owner;
+using Wms.Core.Application.OwnerUseCases.Contracts;
 using Wms.Core.Domain.Entities.Entity;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
-namespace Wms.Core.Application.Queries.EntityQuery.OwnerQueries;
+namespace Wms.Core.Application.OwnerUseCases.Queries;
 
 public class OwnerQueryHandler : ICommandHandler<OwnerQuery, List<OwnerResponse>>
 {

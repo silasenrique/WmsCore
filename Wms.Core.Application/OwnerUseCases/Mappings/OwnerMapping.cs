@@ -1,12 +1,12 @@
 using Mapster;
-using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Create;
-using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Delete;
-using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Update;
-using Wms.Core.Application.Contracts.EntityContract.Owner;
+using Wms.Core.Application.OwnerUseCases.Commands.Create;
+using Wms.Core.Application.OwnerUseCases.Commands.Delete;
+using Wms.Core.Application.OwnerUseCases.Commands.Update;
+using Wms.Core.Application.OwnerUseCases.Contracts;
 using Wms.Core.Domain.Entities.Entity;
 using Wms.Core.Domain.Enums;
 
-namespace Wms.Core.Application.Common.Mapping.EntityMapping;
+namespace Wms.Core.Application.OwnerUseCases.Mappings;
 
 public class OwnerMapping : IRegister
 {

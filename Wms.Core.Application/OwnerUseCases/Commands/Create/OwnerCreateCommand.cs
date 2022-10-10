@@ -1,6 +1,6 @@
-using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Common;
+using Wms.Core.Application.OwnerUseCases.Commands.Common;
 
-namespace Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Create;
+namespace Wms.Core.Application.OwnerUseCases.Commands.Create;
 
 public record OwnerCreateCommand : OwnerWriteCommonWriteCommand
 {

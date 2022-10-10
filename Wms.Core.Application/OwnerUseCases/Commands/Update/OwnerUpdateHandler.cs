@@ -1,11 +1,11 @@
 using ErrorOr;
 using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.EntityContract.Owner;
+using Wms.Core.Application.OwnerUseCases.Contracts;
 using Wms.Core.Domain.Entities.Entity;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Update;
+namespace Wms.Core.Application.OwnerUseCases.Commands.Update;
 
 public class OwnerUpdateHandler : ICommandHandler<OwnerUpdateCommand, ErrorOr<OwnerResponse>>
 {

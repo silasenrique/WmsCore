@@ -1,6 +1,6 @@
-using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Common;
+using Wms.Core.Application.OwnerUseCases.Commands.Common;
 
-namespace Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Update;
+namespace Wms.Core.Application.OwnerUseCases.Commands.Update;
 
 public record OwnerUpdateCommand : OwnerWriteCommonWriteCommand
 {

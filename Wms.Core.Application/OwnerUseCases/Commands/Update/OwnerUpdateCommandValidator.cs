@@ -1,8 +1,8 @@
 using FluentValidation;
-using Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Common;
+using Wms.Core.Application.OwnerUseCases.Commands.Common;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.EntityCommands.OwnerCommand.Update;
+namespace Wms.Core.Application.OwnerUseCases.Commands.Update;
 
 public class OwnerUpdateCommandValidator : AbstractValidator<OwnerUpdateCommand>
 {
