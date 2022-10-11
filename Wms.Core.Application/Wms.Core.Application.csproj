@@ -22,8 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Contracts\Product" />
     <Folder Include="DistributionCenterUseCases\Commands" />
     <Folder Include="OwnerUseCases\Commands" />
+    <Folder Include="ProductUseCases" />
     <Folder Include="ProviderUseCases\Commands" />
     <Folder Include="ShippingUseCases\Commands" />
   </ItemGroup>
@@ -43,6 +45,8 @@
     <Compile Remove="Commands\EntityCommands\**" />
     <Compile Remove="Contracts\EntityContract\**" />
     <Compile Remove="Common\Mapping\EntityMapping\**" />
+    <Compile Remove="Common\Mapping\**" />
+    <Compile Remove="ProductUseCases\ProductCommands\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -60,6 +64,8 @@
     <EmbeddedResource Remove="Commands\EntityCommands\**" />
     <EmbeddedResource Remove="Contracts\EntityContract\**" />
     <EmbeddedResource Remove="Common\Mapping\EntityMapping\**" />
+    <EmbeddedResource Remove="Common\Mapping\**" />
+    <EmbeddedResource Remove="ProductUseCases\ProductCommands\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -77,6 +83,8 @@
     <None Remove="Commands\EntityCommands\**" />
     <None Remove="Contracts\EntityContract\**" />
     <None Remove="Common\Mapping\EntityMapping\**" />
+    <None Remove="Common\Mapping\**" />
+    <None Remove="ProductUseCases\ProductCommands\**" />
   </ItemGroup>
 
 </Project>

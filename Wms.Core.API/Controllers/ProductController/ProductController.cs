@@ -1,10 +1,10 @@
 using ErrorOr;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Wms.Core.Application.Commands.ProductCommands.ProductCommand.Create;
-using Wms.Core.Application.Commands.ProductCommands.ProductCommand.Delete;
-using Wms.Core.Application.Commands.ProductCommands.ProductCommand.Update;
-using Wms.Core.Application.Queries.ProductQueries;
+using Wms.Core.Application.ProductUseCases.Commands.Create;
+using Wms.Core.Application.ProductUseCases.Commands.Delete;
+using Wms.Core.Application.ProductUseCases.Commands.Update;
+using Wms.Core.Application.ProductUseCases.Queries;
 
 namespace Wms.Core.API.Controllers.ProductController;
 

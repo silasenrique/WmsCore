@@ -1,4 +1,4 @@
-namespace Wms.Core.Application.Contracts.Product.ProductContract;
+namespace Wms.Core.Application.ProductUseCases.Contract;
 
 public record ProductResponse(
     int Id,

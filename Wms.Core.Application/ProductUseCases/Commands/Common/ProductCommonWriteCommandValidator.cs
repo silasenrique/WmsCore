@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Wms.Core.Application.Commands.ProductCommands.ProductCommand.Common;
+namespace Wms.Core.Application.ProductUseCases.Commands.Common;
 
 public class ProductCommonWriteCommandValidator : AbstractValidator<ProductCommonWriteCommand>
 {

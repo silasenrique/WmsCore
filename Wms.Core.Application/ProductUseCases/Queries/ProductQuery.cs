@@ -1,7 +1,7 @@
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.Product.ProductContract;
+using Wms.Core.Application.ProductUseCases.Contract;
 
-namespace Wms.Core.Application.Queries.ProductQueries;
+namespace Wms.Core.Application.ProductUseCases.Queries;
 
 public record ProductQuery(
     int Id,

@@ -1,8 +1,8 @@
 using ErrorOr;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.Product.ProductContract;
+using Wms.Core.Application.ProductUseCases.Contract;
 
-namespace Wms.Core.Application.Commands.ProductCommands.ProductCommand.Common;
+namespace Wms.Core.Application.ProductUseCases.Commands.Common;
 
 public record ProductCommonWriteCommand(
     string OwnerCode,

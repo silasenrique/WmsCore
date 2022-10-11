@@ -2,7 +2,7 @@ using ErrorOr;
 using Wms.Core.Application.Common.Interfaces.Messaging;
 using Wms.Core.Infrastructure.Interfaces.ProductRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.ProductCommands.ProductCommand.Delete;
+namespace Wms.Core.Application.ProductUseCases.Commands.Delete;
 
 public class ProductDeleteCommandHandler : ICommandHandler<ProductDeleteCommand, Error?>
 {

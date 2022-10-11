@@ -1,6 +1,6 @@
-using Wms.Core.Application.Commands.ProductCommands.ProductCommand.Common;
+using Wms.Core.Application.ProductUseCases.Commands.Common;
 
-namespace Wms.Core.Application.Commands.ProductCommands.ProductCommand.Create;
+namespace Wms.Core.Application.ProductUseCases.Commands.Create;
 
 public record ProductCreateCommand : ProductCommonWriteCommand
 {

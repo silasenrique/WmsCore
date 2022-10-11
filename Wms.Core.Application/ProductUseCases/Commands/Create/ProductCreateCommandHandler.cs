@@ -1,11 +1,11 @@
 using ErrorOr;
 using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.Product.ProductContract;
+using Wms.Core.Application.ProductUseCases.Contract;
 using Wms.Core.Domain.Entities.Product;
 using Wms.Core.Infrastructure.Interfaces.ProductRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.ProductCommands.ProductCommand.Create;
+namespace Wms.Core.Application.ProductUseCases.Commands.Create;
 
 public class ProductCreateCommandHandler : ICommandHandler<ProductCreateCommand, ErrorOr<ProductResponse>>
 {

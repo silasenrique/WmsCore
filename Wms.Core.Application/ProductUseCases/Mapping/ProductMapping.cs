@@ -1,13 +1,12 @@
-using System.Runtime.CompilerServices;
 using Mapster;
-using Wms.Core.Application.Commands.ProductCommands.ProductCommand.Create;
-using Wms.Core.Application.Commands.ProductCommands.ProductCommand.Delete;
-using Wms.Core.Application.Commands.ProductCommands.ProductCommand.Update;
-using Wms.Core.Application.Contracts.Product.ProductContract;
+using Wms.Core.Application.ProductUseCases.Commands.Create;
+using Wms.Core.Application.ProductUseCases.Commands.Delete;
+using Wms.Core.Application.ProductUseCases.Commands.Update;
+using Wms.Core.Application.ProductUseCases.Contract;
 using Wms.Core.Domain.Entities.Product;
 using Wms.Core.Domain.Enums;
 
-namespace Wms.Core.Application.Common.Mapping.ProductMapping;
+namespace Wms.Core.Application.ProductUseCases.Mapping;
 
 public class ProductMapping : IRegister
 {

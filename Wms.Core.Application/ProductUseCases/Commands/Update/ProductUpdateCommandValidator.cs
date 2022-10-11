@@ -1,8 +1,8 @@
 using FluentValidation;
-using Wms.Core.Application.Commands.ProductCommands.ProductCommand.Common;
+using Wms.Core.Application.ProductUseCases.Commands.Common;
 using Wms.Core.Infrastructure.Interfaces.ProductRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.ProductCommands.ProductCommand.Update;
+namespace Wms.Core.Application.ProductUseCases.Commands.Update;
 
 public class ProductCreateCommandValidator : AbstractValidator<ProductUpdateCommand>
 {
