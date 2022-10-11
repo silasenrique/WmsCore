@@ -1,6 +1,6 @@
 using Wms.Core.Domain.Enums;
 
-namespace Wms.Core.Application.Contracts.UnitizerContract;
+namespace Wms.Core.Application.UnitizerTypeUseCases.Contracts;
 
 public record UnitizerTypeResponse(
     int Id,

@@ -1,8 +1,8 @@
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.UnitizerContract;
+using Wms.Core.Application.UnitizerTypeUseCases.Contracts;
 using Wms.Core.Domain.Enums;
 
-namespace Wms.Core.Application.Queries.UnitizerQueries.UnitizerTypeQueries;
+namespace Wms.Core.Application.UnitizerTypeUseCases.Queries;
 
 public record UnitizerTypeQuery(int Id,
                                 string? Code,

@@ -1,9 +1,9 @@
 using ErrorOr;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.UnitizerContract;
+using Wms.Core.Application.UnitizerTypeUseCases.Contracts;
 using Wms.Core.Domain.Enums;
 
-namespace Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Common;
+namespace Wms.Core.Application.UnitizerTypeUseCases.Commands.Common;
 
 public record UnitizerTypeCommonWriteCommand(
         string? Code,

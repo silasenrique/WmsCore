@@ -1,13 +1,15 @@
-using Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Common;
+using Wms.Core.Application.UnitizerTypeUseCases.Commands.Common;
 using Wms.Core.Domain.Enums;
 
-namespace Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Create;
+namespace Wms.Core.Application.UnitizerTypeUseCases.Commands.Update;
 
-public record UnitizerTypeCreateCommand : UnitizerTypeCommonWriteCommand
+public record UnitizerTypeUpdateCommand : UnitizerTypeCommonWriteCommand
 {
-    public UnitizerTypeCreateCommand(
-        string? Code,
-        string? Description,
+    public int Id { get; set; }
+    public UnitizerTypeUpdateCommand(
+        int id,
+        string Code,
+        string Description,
         float MaximumWeight,
         WeightUnit WeightUnit,
         float Height,
@@ -17,5 +19,6 @@ public record UnitizerTypeCreateCommand : UnitizerTypeCommonWriteCommand
         float Length,
         SizeUnit LengthUnit) : base(Code, Description, MaximumWeight, WeightUnit, Height, HeightUnit, Width, WidthUnit, Length, LengthUnit)
     {
+        Id = id;
     }
 }

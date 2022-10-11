@@ -1,10 +1,10 @@
 using System.Linq.Expressions;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.UnitizerContract;
+using Wms.Core.Application.UnitizerTypeUseCases.Contracts;
 using Wms.Core.Domain.Entities.Unitizer;
 using Wms.Core.Infrastructure.Interfaces.UnitizerRepositoryInterface;
 
-namespace Wms.Core.Application.Queries.UnitizerQueries.UnitizerTypeQueries;
+namespace Wms.Core.Application.UnitizerTypeUseCases.Queries;
 
 public class UnitizerTypeQueryHandler : ICommandHandler<UnitizerTypeQuery, List<UnitizerTypeResponse>>
 {

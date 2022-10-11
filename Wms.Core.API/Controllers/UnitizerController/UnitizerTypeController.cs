@@ -1,10 +1,10 @@
 using ErrorOr;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Create;
-using Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Delete;
-using Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Update;
-using Wms.Core.Application.Queries.UnitizerQueries.UnitizerTypeQueries;
+using Wms.Core.Application.UnitizerTypeUseCases.Commands.Create;
+using Wms.Core.Application.UnitizerTypeUseCases.Commands.Delete;
+using Wms.Core.Application.UnitizerTypeUseCases.Commands.Update;
+using Wms.Core.Application.UnitizerTypeUseCases.Queries;
 
 namespace Wms.Core.API.Controllers.UnitizerController;
 

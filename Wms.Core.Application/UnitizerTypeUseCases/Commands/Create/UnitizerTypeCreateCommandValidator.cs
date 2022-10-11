@@ -1,7 +1,7 @@
 using FluentValidation;
-using Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Common;
+using Wms.Core.Application.UnitizerTypeUseCases.Commands.Common;
 
-namespace Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Create;
+namespace Wms.Core.Application.UnitizerTypeUseCases.Commands.Create;
 
 public class UnitizerTypeCreateCommandValidator : AbstractValidator<UnitizerTypeCreateCommand>
 {

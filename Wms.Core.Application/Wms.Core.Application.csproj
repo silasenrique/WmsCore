@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\Product" />
     <Folder Include="DistributionCenterUseCases\Commands" />
     <Folder Include="OwnerUseCases\Commands" />
     <Folder Include="ProductUseCases" />
@@ -47,6 +46,9 @@
     <Compile Remove="Common\Mapping\EntityMapping\**" />
     <Compile Remove="Common\Mapping\**" />
     <Compile Remove="ProductUseCases\ProductCommands\**" />
+    <Compile Remove="Contracts\Product\**" />
+    <Compile Remove="UnitizerTypeUseCases\Commands\UnitizerCommands\**" />
+    <Compile Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -66,6 +68,9 @@
     <EmbeddedResource Remove="Common\Mapping\EntityMapping\**" />
     <EmbeddedResource Remove="Common\Mapping\**" />
     <EmbeddedResource Remove="ProductUseCases\ProductCommands\**" />
+    <EmbeddedResource Remove="Contracts\Product\**" />
+    <EmbeddedResource Remove="UnitizerTypeUseCases\Commands\UnitizerCommands\**" />
+    <EmbeddedResource Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -85,6 +90,9 @@
     <None Remove="Common\Mapping\EntityMapping\**" />
     <None Remove="Common\Mapping\**" />
     <None Remove="ProductUseCases\ProductCommands\**" />
+    <None Remove="Contracts\Product\**" />
+    <None Remove="UnitizerTypeUseCases\Commands\UnitizerCommands\**" />
+    <None Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,10 @@
 using ErrorOr;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.UnitizerContract;
+using Wms.Core.Application.UnitizerTypeUseCases.Contracts;
 using Wms.Core.Domain.Entities.Unitizer;
 using Wms.Core.Infrastructure.Interfaces.UnitizerRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Create;
+namespace Wms.Core.Application.UnitizerTypeUseCases.Commands.Create;
 
 public class UnitizerTypeCreateCommandHandler : ICommandHandler<UnitizerTypeCreateCommand, ErrorOr<UnitizerTypeResponse>>
 {

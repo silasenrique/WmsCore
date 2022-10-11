@@ -2,7 +2,7 @@ using ErrorOr;
 using Wms.Core.Application.Common.Interfaces.Messaging;
 using Wms.Core.Infrastructure.Interfaces.UnitizerRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Delete;
+namespace Wms.Core.Application.UnitizerTypeUseCases.Commands.Delete;
 
 public class UnitizerTypeDeleteCommandHandler : ICommandHandler<UnitizerTypeDeleteCommand, Error?>
 {

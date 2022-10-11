@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Wms.Core.Application.Commands.UnitizerCommands.UnitizerTypeCommand.Common;
+namespace Wms.Core.Application.UnitizerTypeUseCases.Commands.Common;
 
 public class UnitizerTypeCommonWriteValidator : AbstractValidator<UnitizerTypeCommonWriteCommand>
 {
