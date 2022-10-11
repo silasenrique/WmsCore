@@ -5,6 +5,6 @@ using Wms.Core.Application.DistributionCenterUseCases.Contract;
 namespace Wms.Core.Application.DistributionCenterUseCases.Commands.Common;
 
 public record DistributionCenterCommonWriteCommand(
-    string? Code,
+    string Code,
     string? Name,
-    string? Document) : ICommand<ErrorOr<DistributionCenterResponse>>;
+    string Document) : ICommand<ErrorOr<DistributionCenterResponse>>;

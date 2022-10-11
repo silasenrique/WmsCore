@@ -18,7 +18,7 @@ public class GetDistributionCenterHandler : ICommandHandler<DistributionCenterUs
         _mapper = mapper;
     }
 
-    public async Task<List<DistributionCenterResponse>> Handle(DistributionCenterUseCases.Queries.DistributionCenterQueries query, CancellationToken cancellationToken)
+    public async Task<List<DistributionCenterResponse>> Handle(DistributionCenterQueries query, CancellationToken cancellationToken)
     {
         Expression<Func<DistributionCenter, bool>> expression = e =>
         (e.Id == query.Id || query.Id == 0) &&

@@ -5,7 +5,6 @@ using MapsterMapper;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Wms.Core.Application.Common.Behaviors;
-using Wms.Core.Application.Common.Mapping;
 
 namespace Wms.Core.Application;
 
