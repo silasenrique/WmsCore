@@ -7,8 +7,8 @@ namespace Wms.Core.Application.OwnerUseCases.Commands.Delete;
 
 public class OwnerDeleteHandler : ICommandHandler<OwnerDeleteCommand, Error?>
 {
-    readonly IOwnerRepository _repository;
-    readonly IMapper _mapper;
+    private readonly IMapper _mapper;
+    private readonly IOwnerRepository _repository;
 
     public OwnerDeleteHandler(IOwnerRepository repository, IMapper mapper)
     {

@@ -9,8 +9,8 @@ namespace Wms.Core.Application.OwnerUseCases.Commands.Update;
 
 public class OwnerUpdateHandler : ICommandHandler<OwnerUpdateCommand, ErrorOr<OwnerResponse>>
 {
-    readonly IOwnerRepository _repository;
-    readonly IMapper _mapper;
+    private readonly IMapper _mapper;
+    private readonly IOwnerRepository _repository;
 
     public OwnerUpdateHandler(IOwnerRepository repository, IMapper mapper)
     {

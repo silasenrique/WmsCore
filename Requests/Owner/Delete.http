@@ -1,1 +1,1 @@
-    DELETE {{host}}/owner?code=Comfrio
+    DELETE https://localhost:7224/api/owner?code=ALCIS

@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Wms.Core.Application.Commands.EntityCommands.ProviderCommand.Common;
+namespace Wms.Core.Application.ProviderUseCases.Commands.Common;
 
 public class ProviderCommonWriteCommandValidator : AbstractValidator<ProviderCommonWriteCommand>
 {

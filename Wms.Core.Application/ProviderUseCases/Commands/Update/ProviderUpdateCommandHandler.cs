@@ -1,11 +1,11 @@
 using ErrorOr;
 using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.EntityContract.Provider;
+using Wms.Core.Application.ProviderUseCases.Contracts;
 using Wms.Core.Domain.Entities.Entity;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.EntityCommands.ProviderCommand.Update;
+namespace Wms.Core.Application.ProviderUseCases.Commands.Update;
 
 public class ProviderUpdateCommandHandler : ICommandHandler<ProviderUpdateCommand, ErrorOr<ProviderResponse>>
 {

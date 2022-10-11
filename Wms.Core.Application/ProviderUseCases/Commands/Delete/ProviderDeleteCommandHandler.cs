@@ -2,7 +2,7 @@ using ErrorOr;
 using Wms.Core.Application.Common.Interfaces.Messaging;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.EntityCommands.ProviderCommand.Delete;
+namespace Wms.Core.Application.ProviderUseCases.Commands.Delete;
 
 public class ProviderDeleteCommandHandler : ICommandHandler<ProviderDeleteCommand, Error?>
 {

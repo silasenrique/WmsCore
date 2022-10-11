@@ -14,11 +14,13 @@ public class OwnerMapping : IRegister
     {
         config.NewConfig<OwnerCreateCommand, Owner>()
             .MapToConstructor(true)
-            .ConstructUsing(scr => new Owner(scr.Code, scr.Name, scr.Document, (TypeEntity)scr.TypeDoc, (GlobalStatus)scr.Status));
+            .ConstructUsing(scr =>
+                new Owner(scr.Code, scr.Name, scr.Document, (TypeEntity)scr.TypeDoc, (GlobalStatus)scr.Status));
 
         config.NewConfig<OwnerUpdateCommand, Owner>()
             .MapToConstructor(true)
-            .ConstructUsing(scr => new Owner(scr.Id, scr.Code, scr.Name, scr.Document, (TypeEntity)scr.TypeDoc, (GlobalStatus)scr.Status));
+            .ConstructUsing(scr => new Owner(scr.Id, scr.Code, scr.Name, scr.Document, (TypeEntity)scr.TypeDoc,
+                (GlobalStatus)scr.Status));
 
         config.NewConfig<OwnerDeleteCommand, Owner>()
             .MapToConstructor(true)
@@ -26,8 +28,10 @@ public class OwnerMapping : IRegister
 
         config.NewConfig<Owner, OwnerResponse>()
             .Map(dest => dest.CreationDate,
-                 src => new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(src.CreationDate).ToLocalTime())
+                src => new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(src.CreationDate)
+                    .ToLocalTime())
             .Map(dest => dest.LastChangeDate,
-                 src => new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(src.LastChangeDate).ToLocalTime());
+                src => new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(src.LastChangeDate)
+                    .ToLocalTime());
     }
 }

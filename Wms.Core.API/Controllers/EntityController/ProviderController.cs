@@ -1,10 +1,10 @@
 using ErrorOr;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Wms.Core.Application.Commands.EntityCommands.ProviderCommand.Create;
-using Wms.Core.Application.Commands.EntityCommands.ProviderCommand.Delete;
-using Wms.Core.Application.Commands.EntityCommands.ProviderCommand.Update;
-using Wms.Core.Application.Queries.EntityQuery.ProviderQueries;
+using Wms.Core.Application.ProviderUseCases.Commands.Create;
+using Wms.Core.Application.ProviderUseCases.Commands.Delete;
+using Wms.Core.Application.ProviderUseCases.Commands.Update;
+using Wms.Core.Application.ProviderUseCases.Queries;
 
 namespace Wms.Core.API.Controllers.EntityController;
 

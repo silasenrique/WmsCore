@@ -1,12 +1,12 @@
 using Mapster;
-using Wms.Core.Application.Commands.EntityCommands.ProviderCommand.Create;
-using Wms.Core.Application.Commands.EntityCommands.ProviderCommand.Delete;
-using Wms.Core.Application.Commands.EntityCommands.ProviderCommand.Update;
-using Wms.Core.Application.Contracts.EntityContract.Provider;
+using Wms.Core.Application.ProviderUseCases.Commands.Create;
+using Wms.Core.Application.ProviderUseCases.Commands.Delete;
+using Wms.Core.Application.ProviderUseCases.Commands.Update;
+using Wms.Core.Application.ProviderUseCases.Contracts;
 using Wms.Core.Domain.Entities.Entity;
 using Wms.Core.Domain.Enums;
 
-namespace Wms.Core.Application.Common.Mapping.EntityMapping;
+namespace Wms.Core.Application.ProviderUseCases.Mappings;
 
 public class ProviderMapping : IRegister
 {

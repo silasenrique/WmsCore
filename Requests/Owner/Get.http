@@ -1,1 +1,1 @@
-    GET {{host}}/owner?code=Tigre
+    GET https://localhost:7224/api/owner

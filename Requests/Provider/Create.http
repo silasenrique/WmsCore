@@ -1,0 +1,10 @@
+POST https://localhost:7224/api/provider
+Content-Type: application/json
+
+{
+  "code": "ALCIS",
+  "name": "Alcis",
+  "document": "12121212",
+  "typeDoc": "LegalPerson",
+  "status": "Disabled"
+}

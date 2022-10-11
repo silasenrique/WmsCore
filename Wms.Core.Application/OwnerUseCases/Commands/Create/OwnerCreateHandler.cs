@@ -9,8 +9,8 @@ namespace Wms.Core.Application.OwnerUseCases.Commands.Create;
 
 public class OwnerCreateHandler : ICommandHandler<OwnerCreateCommand, ErrorOr<OwnerResponse>>
 {
-    readonly IOwnerRepository _repository;
-    readonly IMapper _mapper;
+    private readonly IMapper _mapper;
+    private readonly IOwnerRepository _repository;
 
     public OwnerCreateHandler(IOwnerRepository repository, IMapper mapper)
     {

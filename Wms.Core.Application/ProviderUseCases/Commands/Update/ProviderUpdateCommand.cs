@@ -1,11 +1,11 @@
-using Wms.Core.Application.OwnerUseCases.Commands.Common;
+using Wms.Core.Application.ProviderUseCases.Commands.Common;
 using Wms.Core.Domain.Enums;
 
-namespace Wms.Core.Application.OwnerUseCases.Commands.Update;
+namespace Wms.Core.Application.ProviderUseCases.Commands.Update;
 
-public record OwnerUpdateCommand : OwnerWriteCommonWriteCommand
+public record ProviderUpdateCommand : ProviderCommonWriteCommand
 {
-    public OwnerUpdateCommand(
+    public ProviderUpdateCommand(
         int id,
         string Code,
         string Name,
@@ -17,4 +17,6 @@ public record OwnerUpdateCommand : OwnerWriteCommonWriteCommand
     }
 
     public int Id { get; set; }
+
+
 }

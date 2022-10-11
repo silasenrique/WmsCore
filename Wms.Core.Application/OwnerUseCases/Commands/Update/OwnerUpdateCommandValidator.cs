@@ -6,7 +6,7 @@ namespace Wms.Core.Application.OwnerUseCases.Commands.Update;
 
 public class OwnerUpdateCommandValidator : AbstractValidator<OwnerUpdateCommand>
 {
-    readonly IOwnerRepository _repository;
+    private readonly IOwnerRepository _repository;
 
     public OwnerUpdateCommandValidator(IOwnerRepository repository)
     {
@@ -14,16 +14,20 @@ public class OwnerUpdateCommandValidator : AbstractValidator<OwnerUpdateCommand>
         Validate();
     }
 
-    void Validate()
+    private void Validate()
     {
         Include(new OwnerWriteCommonWriteCommandValidator());
 
         RuleFor(cd => new { cd.Code, cd.Document })
-            .MustAsync(async (code, cancellation) => { var result = await DocumentIsAlreadyAllocated(code.Code, code.Document); return !result; })
+            .MustAsync(async (code, cancellation) =>
+            {
+                var result = await DocumentIsAlreadyAllocated(code.Code, code.Document);
+                return !result;
+            })
             .WithMessage("o documento informado já está alocado a outro proprietário");
     }
 
-    async Task<bool> DocumentIsAlreadyAllocated(string? code, string? document)
+    private async Task<bool> DocumentIsAlreadyAllocated(string? code, string? document)
     {
         var result = await _repository.DocumentIsAlreadyAllocated(code, document);
 

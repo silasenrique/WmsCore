@@ -1,11 +1,11 @@
 using System.Linq.Expressions;
 using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.EntityContract.Provider;
+using Wms.Core.Application.ProviderUseCases.Contracts;
 using Wms.Core.Domain.Entities.Entity;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
-namespace Wms.Core.Application.Queries.EntityQuery.ProviderQueries;
+namespace Wms.Core.Application.ProviderUseCases.Queries;
 
 public class ProviderQueryHandler : ICommandHandler<ProviderQuery, List<ProviderResponse>?>
 {

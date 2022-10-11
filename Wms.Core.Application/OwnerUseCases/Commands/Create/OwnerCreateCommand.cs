@@ -1,4 +1,5 @@
 using Wms.Core.Application.OwnerUseCases.Commands.Common;
+using Wms.Core.Domain.Enums;
 
 namespace Wms.Core.Application.OwnerUseCases.Commands.Create;
 
@@ -8,8 +9,8 @@ public record OwnerCreateCommand : OwnerWriteCommonWriteCommand
         string Code,
         string Name,
         string Document,
-        int TypeDoc,
-        int Status) : base(Code, Name, Document, TypeDoc, Status)
+        TypeEntity TypeDoc,
+        GlobalStatus Status) : base(Code, Name, Document, TypeDoc, Status)
     {
     }
 }
