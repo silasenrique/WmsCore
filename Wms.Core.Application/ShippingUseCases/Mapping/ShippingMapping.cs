@@ -1,12 +1,12 @@
 using Mapster;
-using Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Create;
-using Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Delete;
-using Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Update;
-using Wms.Core.Application.Contracts.EntityContract.Shipping;
+using Wms.Core.Application.ShippingUseCases.Commands.Create;
+using Wms.Core.Application.ShippingUseCases.Commands.Delete;
+using Wms.Core.Application.ShippingUseCases.Commands.Update;
+using Wms.Core.Application.ShippingUseCases.Contracts;
 using Wms.Core.Domain.Entities.Entity;
 using Wms.Core.Domain.Enums;
 
-namespace Wms.Core.Application.Common.Mapping.EntityMapping;
+namespace Wms.Core.Application.ShippingUseCases.Mapping;
 
 public class ShippingMapping : IRegister
 {

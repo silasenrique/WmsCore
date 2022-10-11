@@ -1,7 +1,7 @@
 using Wms.Core.Application.Common.Interfaces.Messaging;
-using Wms.Core.Application.Contracts.EntityContract.Shipping;
+using Wms.Core.Application.ShippingUseCases.Contracts;
 
-namespace Wms.Core.Application.Queries.EntityQuery.ShippingQueries;
+namespace Wms.Core.Application.ShippingUseCases.Queries;
 
 public record ShippingQuery(
     int Id,

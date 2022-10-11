@@ -1,4 +1,4 @@
-namespace Wms.Core.Application.Contracts.EntityContract.Shipping;
+namespace Wms.Core.Application.ShippingUseCases.Contracts;
 
 public record ShippingResponse(
     int Id,

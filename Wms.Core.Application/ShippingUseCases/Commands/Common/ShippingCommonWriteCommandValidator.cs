@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Common;
+namespace Wms.Core.Application.ShippingUseCases.Commands.Common;
 
 public class ShippingCommonWriteCommandValidator : AbstractValidator<ShippingCommonWriteCommand>
 {

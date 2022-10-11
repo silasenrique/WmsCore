@@ -25,6 +25,7 @@
     <Folder Include="DistributionCenterUseCases\Commands" />
     <Folder Include="OwnerUseCases\Commands" />
     <Folder Include="ProviderUseCases\Commands" />
+    <Folder Include="ShippingUseCases\Commands" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +38,11 @@
     <Compile Remove="Queries\EntityQuery\ProviderQueries\**" />
     <Compile Remove="Commands\EntityCommands\ProviderCommand\**" />
     <Compile Remove="Contracts\EntityContract\Provider\**" />
+    <Compile Remove="Commands\EntityCommands\ShippingCommand\**" />
+    <Compile Remove="Queries\EntityQuery\**" />
+    <Compile Remove="Commands\EntityCommands\**" />
+    <Compile Remove="Contracts\EntityContract\**" />
+    <Compile Remove="Common\Mapping\EntityMapping\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,6 +55,11 @@
     <EmbeddedResource Remove="Queries\EntityQuery\ProviderQueries\**" />
     <EmbeddedResource Remove="Commands\EntityCommands\ProviderCommand\**" />
     <EmbeddedResource Remove="Contracts\EntityContract\Provider\**" />
+    <EmbeddedResource Remove="Commands\EntityCommands\ShippingCommand\**" />
+    <EmbeddedResource Remove="Queries\EntityQuery\**" />
+    <EmbeddedResource Remove="Commands\EntityCommands\**" />
+    <EmbeddedResource Remove="Contracts\EntityContract\**" />
+    <EmbeddedResource Remove="Common\Mapping\EntityMapping\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,6 +72,11 @@
     <None Remove="Queries\EntityQuery\ProviderQueries\**" />
     <None Remove="Commands\EntityCommands\ProviderCommand\**" />
     <None Remove="Contracts\EntityContract\Provider\**" />
+    <None Remove="Commands\EntityCommands\ShippingCommand\**" />
+    <None Remove="Queries\EntityQuery\**" />
+    <None Remove="Commands\EntityCommands\**" />
+    <None Remove="Contracts\EntityContract\**" />
+    <None Remove="Common\Mapping\EntityMapping\**" />
   </ItemGroup>
 
 </Project>

@@ -3,7 +3,7 @@ using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Delete;
+namespace Wms.Core.Application.ShippingUseCases.Commands.Delete;
 
 public class ShippingDeleteCommandHandler : ICommandHandler<ShippingDeleteCommand, Error?>
 {

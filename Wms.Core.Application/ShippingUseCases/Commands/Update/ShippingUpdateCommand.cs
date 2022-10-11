@@ -1,6 +1,6 @@
-using Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Common;
+using Wms.Core.Application.ShippingUseCases.Commands.Common;
 
-namespace Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Update;
+namespace Wms.Core.Application.ShippingUseCases.Commands.Update;
 
 public record ShippingUpdateCommand : ShippingCommonWriteCommand
 {

@@ -1,10 +1,10 @@
 using ErrorOr;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Create;
-using Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Delete;
-using Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Update;
-using Wms.Core.Application.Queries.EntityQuery.ShippingQueries;
+using Wms.Core.Application.ShippingUseCases.Commands.Create;
+using Wms.Core.Application.ShippingUseCases.Commands.Delete;
+using Wms.Core.Application.ShippingUseCases.Commands.Update;
+using Wms.Core.Application.ShippingUseCases.Queries;
 
 namespace Wms.Core.API.Controllers.EntityController;
 

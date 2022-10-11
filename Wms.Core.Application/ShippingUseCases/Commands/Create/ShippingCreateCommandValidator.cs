@@ -1,8 +1,8 @@
 using FluentValidation;
-using Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Common;
+using Wms.Core.Application.ShippingUseCases.Commands.Common;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
-namespace Wms.Core.Application.Commands.EntityCommands.ShippingCommand.Create;
+namespace Wms.Core.Application.ShippingUseCases.Commands.Create;
 
 public class ShippingCreateCommandValidator : AbstractValidator<ShippingCreateCommand>
 {
