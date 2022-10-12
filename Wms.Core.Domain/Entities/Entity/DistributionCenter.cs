@@ -26,10 +26,10 @@ public class DistributionCenter
         LastChangeDate = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
     }
 
-    public int Id { get; set; }
-    public string? Code { get; set; }
-    public string? Name { get; set; }
-    public string? Document { get; set; }
-    public long CreationDate { get; set; }
-    public long LastChangeDate { get; set; }
+    public int Id { get; private set; }
+    public string Code { get; private set; }
+    public string Name { get; private set; }
+    public string Document { get; private set; }
+    public long CreationDate { get; private  set; }
+    public long LastChangeDate { get; private set; }
 }

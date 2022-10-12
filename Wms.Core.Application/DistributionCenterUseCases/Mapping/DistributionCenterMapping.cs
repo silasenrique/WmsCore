@@ -11,17 +11,17 @@ public class DistributionCenterMapping : IRegister
 {
     public void Register(TypeAdapterConfig config)
     {
-        config.NewConfig<DistributionCenterCreateCommand, DistributionCenter>()
-            .MapToConstructor(true)
-            .ConstructUsing(scr => new DistributionCenter(scr.Code, scr.Name, scr.Document));
+        // config.NewConfig<DistributionCenterCreateCommand, DistributionCenter>()
+        //     .MapToConstructor(true)
+        //     .ConstructUsing(scr => new DistributionCenter(scr.Code, scr.Name, scr.Document));
 
-        config.NewConfig<DistributionCenterUpdateCommand, DistributionCenter>()
-            .MapToConstructor(true)
-            .ConstructUsing(scr => new DistributionCenter(scr.Id, scr.Code, scr.Name, scr.Document));
+        // config.NewConfig<DistributionCenterUpdateCommand, DistributionCenter>()
+        //     .MapToConstructor(true)
+        //     .ConstructUsing(scr => new DistributionCenter(scr.Id, scr.Code, scr.Name, scr.Document));
 
-        config.NewConfig<DistributionCenterDeleteCommand, DistributionCenter>()
-            .MapToConstructor(true)
-            .ConstructUsing(src => new DistributionCenter(src.Code));
+        // config.NewConfig<DistributionCenterDeleteCommand, DistributionCenter>()
+        //     .MapToConstructor(true)
+        //     .ConstructUsing(src => new DistributionCenter(src.Code));
 
         config.NewConfig<DistributionCenter, DistributionCenterResponse>()
               .Map(dest => dest.CreationDate,

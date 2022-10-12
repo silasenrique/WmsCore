@@ -49,6 +49,10 @@
     <Compile Remove="Contracts\Product\**" />
     <Compile Remove="UnitizerTypeUseCases\Commands\UnitizerCommands\**" />
     <Compile Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
+    <Compile Remove="DistributionCenterUseCases\Services\**" />
+    <Compile Remove="DistributionCenterUseCases\Mapping\ToDistributionCenter.cs" />
+    <Compile Remove="DistributionCenterUseCases\Mapping\DistributionCenterMapping.cs" />
+    <Compile Remove="DistributionCenterUseCases\Mapping\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -71,6 +75,8 @@
     <EmbeddedResource Remove="Contracts\Product\**" />
     <EmbeddedResource Remove="UnitizerTypeUseCases\Commands\UnitizerCommands\**" />
     <EmbeddedResource Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
+    <EmbeddedResource Remove="DistributionCenterUseCases\Services\**" />
+    <EmbeddedResource Remove="DistributionCenterUseCases\Mapping\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -93,6 +99,8 @@
     <None Remove="Contracts\Product\**" />
     <None Remove="UnitizerTypeUseCases\Commands\UnitizerCommands\**" />
     <None Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
+    <None Remove="DistributionCenterUseCases\Services\**" />
+    <None Remove="DistributionCenterUseCases\Mapping\**" />
   </ItemGroup>
 
 </Project>
