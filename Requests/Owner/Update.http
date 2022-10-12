@@ -2,10 +2,10 @@ PUT https://localhost:7224/api/owner HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": 2,
+    "id": 3,
     "code": "Tigre",
     "name": "Tigre Canos e PVC, LTDA.",
-    "document": "12291311100100",
-    "typeDoc": 1,
-    "status": 2
+    "document": "19999911111100",
+    "typeDoc": "LegalPerson",
+    "status": "Activated"
 }

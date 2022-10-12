@@ -4,12 +4,12 @@ namespace Wms.Core.Domain.Entities.Entity.Abstractions;
 
 public abstract class GenericEntity
 {
-    protected GenericEntity(string? code)
+    protected GenericEntity(string code)
     {
         Code = code;
     }
 
-    protected GenericEntity(string? code, string? name, string? document, TypeEntity typeDoc, GlobalStatus status) : this(code)
+    protected GenericEntity(string code, string name, string document, TypeEntity typeDoc, GlobalStatus status) : this(code)
     {
         Name = name;
         Document = document;
@@ -19,7 +19,7 @@ public abstract class GenericEntity
         LastChangeDate = CreationDate;
     }
 
-    protected GenericEntity(int id, string? code, string? name, string? document, TypeEntity typeDoc, GlobalStatus status)
+    protected GenericEntity(int id, string code, string name, string document, TypeEntity typeDoc, GlobalStatus status)
     {
         Id = id;
         Code = code;
@@ -30,12 +30,12 @@ public abstract class GenericEntity
         LastChangeDate = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
     }
 
-    public int Id { get; set; }
-    public string? Code { get; set; }
-    public string? Name { get; set; }
-    public string? Document { get; set; }
-    public TypeEntity TypeDoc { get; set; }
-    public GlobalStatus Status { get; set; }
-    public long CreationDate { get; set; }
-    public long LastChangeDate { get; set; }
+    public int Id { get; private set; }
+    public string Code { get; private  set; }
+    public string Name { get; private set; }
+    public string Document { get; private set; }
+    public TypeEntity TypeDoc { get; private set; }
+    public GlobalStatus Status { get; private set; }
+    public long CreationDate { get; private set; }
+    public long LastChangeDate { get; private set; }
 }

@@ -53,6 +53,8 @@
     <Compile Remove="DistributionCenterUseCases\Mapping\ToDistributionCenter.cs" />
     <Compile Remove="DistributionCenterUseCases\Mapping\DistributionCenterMapping.cs" />
     <Compile Remove="DistributionCenterUseCases\Mapping\**" />
+    <Compile Remove="OwnerUseCases\Mappings\OwnerMapping.cs" />
+    <Compile Remove="OwnerUseCases\Mappings\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -77,6 +79,7 @@
     <EmbeddedResource Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
     <EmbeddedResource Remove="DistributionCenterUseCases\Services\**" />
     <EmbeddedResource Remove="DistributionCenterUseCases\Mapping\**" />
+    <EmbeddedResource Remove="OwnerUseCases\Mappings\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -101,6 +104,7 @@
     <None Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
     <None Remove="DistributionCenterUseCases\Services\**" />
     <None Remove="DistributionCenterUseCases\Mapping\**" />
+    <None Remove="OwnerUseCases\Mappings\**" />
   </ItemGroup>
 
 </Project>
