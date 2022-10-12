@@ -1,24 +1,25 @@
 using ErrorOr;
-using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
+using Wms.Core.Domain.Entities.Entity;
 using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
 namespace Wms.Core.Application.ShippingUseCases.Commands.Delete;
 
 public class ShippingDeleteCommandHandler : ICommandHandler<ShippingDeleteCommand, Error?>
 {
-    readonly IShippingRepository _repository;
-    readonly IMapper _mapper;
+    private readonly IShippingRepository _repository;
 
-    public ShippingDeleteCommandHandler(IShippingRepository repository, IMapper mapper)
+    public ShippingDeleteCommandHandler(IShippingRepository repository)
     {
         _repository = repository;
-        _mapper = mapper;
     }
 
     public async Task<Error?> Handle(ShippingDeleteCommand command, CancellationToken cancellationToken)
     {
-        await _repository.Delete(await _repository.GetByCode(command.Code));
+        Shipping? shipping =  await _repository.GetByCode(command.Code);
+        if (shipping is null) return null;
+        
+        await _repository.Delete(shipping);
 
         return null;
     }

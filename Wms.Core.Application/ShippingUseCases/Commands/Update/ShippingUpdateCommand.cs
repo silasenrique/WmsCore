@@ -1,19 +1,12 @@
 using Wms.Core.Application.ShippingUseCases.Commands.Common;
+using Wms.Core.Domain.Enums;
 
 namespace Wms.Core.Application.ShippingUseCases.Commands.Update;
 
-public record ShippingUpdateCommand : ShippingCommonWriteCommand
-{
-    public int Id { get; set; }
-
-    public ShippingUpdateCommand(
-        int id,
-        string Code,
-        string Name,
-        string Document,
-        int TypeDoc,
-        int Status) : base(Code, Name, Document, TypeDoc, Status)
-    {
-        Id = id;
-    }
-}
+public record ShippingUpdateCommand(
+    int Id,
+    string Code,
+    string Name,
+    string Document,
+    TypeEntity TypeDoc,
+    GlobalStatus Status) : ShippingCommonWriteCommand(Code, Name, Document, TypeDoc, Status);

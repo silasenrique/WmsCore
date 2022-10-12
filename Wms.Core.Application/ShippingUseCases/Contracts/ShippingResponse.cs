@@ -1,11 +1,14 @@
+using Wms.Core.Domain.Enums;
+
 namespace Wms.Core.Application.ShippingUseCases.Contracts;
 
 public record ShippingResponse(
     int Id,
     string Code,
     string Document,
-    int TypeDoc,
-    int GlobalStatus,
+    string Name,
+    TypeEntity TypeDoc,
+    GlobalStatus GlobalStatus,
     string CreationDate,
     string LastChangeDate
 );

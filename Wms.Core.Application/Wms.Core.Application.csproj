@@ -57,6 +57,7 @@
     <Compile Remove="OwnerUseCases\Mappings\**" />
     <Compile Remove="ProductUseCases\Mapping\**" />
     <Compile Remove="ProviderUseCases\Mappings\**" />
+    <Compile Remove="ShippingUseCases\Mapping\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -84,6 +85,7 @@
     <EmbeddedResource Remove="OwnerUseCases\Mappings\**" />
     <EmbeddedResource Remove="ProductUseCases\Mapping\**" />
     <EmbeddedResource Remove="ProviderUseCases\Mappings\**" />
+    <EmbeddedResource Remove="ShippingUseCases\Mapping\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -111,6 +113,7 @@
     <None Remove="OwnerUseCases\Mappings\**" />
     <None Remove="ProductUseCases\Mapping\**" />
     <None Remove="ProviderUseCases\Mappings\**" />
+    <None Remove="ShippingUseCases\Mapping\**" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,4 @@
 using ErrorOr;
-using MapsterMapper;
 using Wms.Core.Application.Common.Interfaces.Messaging;
 using Wms.Core.Application.ShippingUseCases.Contracts;
 using Wms.Core.Domain.Entities.Entity;
@@ -9,19 +8,35 @@ namespace Wms.Core.Application.ShippingUseCases.Commands.Update;
 
 public class ShippingUpdateCommandHandler : ICommandHandler<ShippingUpdateCommand, ErrorOr<ShippingResponse>>
 {
-    readonly IShippingRepository _repository;
-    readonly IMapper _mapper;
+    private readonly IShippingRepository _repository;
 
-    public ShippingUpdateCommandHandler(IShippingRepository repository, IMapper mapper)
+    public ShippingUpdateCommandHandler(IShippingRepository repository)
     {
         _repository = repository;
-        _mapper = mapper;
     }
 
     public async Task<ErrorOr<ShippingResponse>> Handle(ShippingUpdateCommand command, CancellationToken cancellationToken)
     {
-        await _repository.Update(_mapper.Map<Shipping>(command));
+        Shipping? shipping = new Shipping(
+            command.Id,
+            command.Code,
+            command.Name,
+            command.Document,
+            command.TypeDoc,
+            command.Status);
+        
+        await _repository.Update(shipping);
 
-        return _mapper.Map<ShippingResponse>(_repository.GetByCode(command.Code));
+        shipping = await _repository.GetByCode(command.Code);
+
+        return new ShippingResponse (
+            shipping.Id,
+            shipping.Code,
+            shipping.Document,
+            shipping.Name,
+            shipping.TypeDoc,
+            shipping.Status,
+            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(shipping.CreationDate).ToString(),
+            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(shipping.LastChangeDate).ToString());
     }
 }
