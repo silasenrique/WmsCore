@@ -4,13 +4,13 @@ namespace Wms.Core.Domain.Entities.Product;
 
 public class Product
 {
-    public Product(string? ownerCode, string? code)
+    public Product(string ownerCode, string code)
     {
         OwnerCode = ownerCode;
         Code = code;
     }
 
-    public Product(string? ownerCode, string? code, string? description, GlobalStatus status)
+    public Product(string ownerCode, string code, string description, GlobalStatus status)
     {
         OwnerCode = ownerCode;
         Code = code;
@@ -21,7 +21,7 @@ public class Product
         LastChangeDate = CreationDate;
     }
 
-    public Product(int id, string? ownerCode, string? code, string? description, GlobalStatus status)
+    public Product(int id, string ownerCode, string code, string description, GlobalStatus status)
     {
         Id = id;
         OwnerCode = ownerCode;
@@ -33,10 +33,10 @@ public class Product
     }
 
     public int Id { get; set; }
-    public string? OwnerCode { get; set; }  // Ef constraints
-    public string? Code { get; set; }
-    public string? Description { get; set; }
-    public GlobalStatus Status { get; set; }
-    public long CreationDate { get; set; }
-    public long LastChangeDate { get; set; }
+    public string OwnerCode { get; private set; }  // Ef constraints
+    public string Code { get; private set; }
+    public string Description { get; private set; }
+    public GlobalStatus Status { get; private set; }
+    public long CreationDate { get; private set; }
+    public long LastChangeDate { get; private set; }
 }

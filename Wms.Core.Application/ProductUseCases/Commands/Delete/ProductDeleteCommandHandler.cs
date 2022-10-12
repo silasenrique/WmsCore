@@ -1,5 +1,6 @@
 using ErrorOr;
 using Wms.Core.Application.Common.Interfaces.Messaging;
+using Wms.Core.Domain.Entities.Product;
 using Wms.Core.Infrastructure.Interfaces.ProductRepositoryInterface;
 
 namespace Wms.Core.Application.ProductUseCases.Commands.Delete;
@@ -15,7 +16,11 @@ public class ProductDeleteCommandHandler : ICommandHandler<ProductDeleteCommand,
 
     public async Task<Error?> Handle(ProductDeleteCommand command, CancellationToken cancellationToken)
     {
-        await _repository.Delete(await _repository.GetByOwnerAndCode(command.Code, command.OwnerCode));
+
+        Product? product = await _repository.GetByOwnerAndCode(command.Code, command.OwnerCode);
+        if (product is null) return null;
+        
+        await _repository.Delete(product);
 
         return null;
     }
