@@ -6,6 +6,7 @@ public record ProviderResponse(
     int Id,
     string Code,
     string Document,
+    string Name,
     TypeEntity TypeDoc,
     GlobalStatus GlobalStatus,
     string CreationDate,

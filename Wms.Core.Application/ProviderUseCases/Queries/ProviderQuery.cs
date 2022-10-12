@@ -5,9 +5,9 @@ using Wms.Core.Domain.Enums;
 namespace Wms.Core.Application.ProviderUseCases.Queries;
 
 public record ProviderQuery(
-    int Id,
+    int? Id,
     string? Code,
     string? Name,
     string? Document,
-    TypeEntity TypeDoc,
-    GlobalStatus Status) : ICommand<List<ProviderResponse>>;
+    TypeEntity? TypeDoc,
+    GlobalStatus? Status) : ICommand<List<ProviderResponse>>;

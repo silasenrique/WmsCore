@@ -3,20 +3,10 @@ using Wms.Core.Domain.Enums;
 
 namespace Wms.Core.Application.ProviderUseCases.Commands.Update;
 
-public record ProviderUpdateCommand : ProviderCommonWriteCommand
-{
-    public ProviderUpdateCommand(
-        int id,
-        string Code,
-        string Name,
-        string Document,
-        TypeEntity TypeDoc,
-        GlobalStatus Status) : base(Code, Name, Document, TypeDoc, Status)
-    {
-        Id = id;
-    }
-
-    public int Id { get; set; }
-
-
-}
+public record ProviderUpdateCommand(
+    int Id,
+    string Code,
+    string Name,
+    string Document,
+    TypeEntity TypeDoc,
+    GlobalStatus Status) : ProviderCommonWriteCommand(Code, Name, Document, TypeDoc, Status);

@@ -56,6 +56,7 @@
     <Compile Remove="OwnerUseCases\Mappings\OwnerMapping.cs" />
     <Compile Remove="OwnerUseCases\Mappings\**" />
     <Compile Remove="ProductUseCases\Mapping\**" />
+    <Compile Remove="ProviderUseCases\Mappings\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -82,6 +83,7 @@
     <EmbeddedResource Remove="DistributionCenterUseCases\Mapping\**" />
     <EmbeddedResource Remove="OwnerUseCases\Mappings\**" />
     <EmbeddedResource Remove="ProductUseCases\Mapping\**" />
+    <EmbeddedResource Remove="ProviderUseCases\Mappings\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -108,6 +110,7 @@
     <None Remove="DistributionCenterUseCases\Mapping\**" />
     <None Remove="OwnerUseCases\Mappings\**" />
     <None Remove="ProductUseCases\Mapping\**" />
+    <None Remove="ProviderUseCases\Mappings\**" />
   </ItemGroup>
 
 </Project>
