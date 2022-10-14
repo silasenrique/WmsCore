@@ -6,5 +6,5 @@ namespace Wms.Core.Application.DistributionCenterUseCases.Commands.Common;
 
 public record DistributionCenterCommonWriteCommand(
     string Code,
-    string? Name,
+    string Name,
     string Document) : ICommand<ErrorOr<DistributionCenterResponse>>;

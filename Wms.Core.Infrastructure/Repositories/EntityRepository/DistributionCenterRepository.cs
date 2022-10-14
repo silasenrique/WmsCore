@@ -29,9 +29,9 @@ public class DistributionCenterRepository : GenericRepository<DistributionCenter
         return result.FirstOrDefault();
     }
 
-    public async Task<DistributionCenter?> DocumentIsAlreadyAllocated(string code, string document)
+    public async Task<DistributionCenter?> GetById(int id)
     {
-        expression = e => e.Code != code && e.Document == document;
+        expression = e => e.Id == id;
 
         var result = await Get(expression);
 

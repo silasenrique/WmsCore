@@ -11,7 +11,7 @@ namespace Wms.Core.API.Controllers.UnitizerController;
 [Route("api/unitizer-type")]
 public class UnitizerTypeController : MainController
 {
-    readonly ISender _sender;
+    private readonly ISender _sender;
 
     public UnitizerTypeController(ISender sender)
     {

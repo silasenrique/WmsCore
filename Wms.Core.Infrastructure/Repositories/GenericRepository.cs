@@ -6,8 +6,8 @@ namespace Wms.Core.Infrastructure.Repositories;
 
 public class GenericRepository<TEntity> where TEntity : class
 {
-    internal readonly DbContext _context;
-    internal readonly DbSet<TEntity> _dbSet;
+    private readonly DbContext _context;
+    private readonly DbSet<TEntity> _dbSet;
 
     public GenericRepository(ApplicationContext context)
     {

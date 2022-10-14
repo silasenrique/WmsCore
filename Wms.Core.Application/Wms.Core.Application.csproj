@@ -47,15 +47,17 @@
     <Compile Remove="Contracts\Product\**" />
     <Compile Remove="UnitizerTypeUseCases\Commands\UnitizerCommands\**" />
     <Compile Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
-    <Compile Remove="DistributionCenterUseCases\Services\**" />
-    <Compile Remove="DistributionCenterUseCases\Mapping\ToDistributionCenter.cs" />
-    <Compile Remove="DistributionCenterUseCases\Mapping\DistributionCenterMapping.cs" />
-    <Compile Remove="DistributionCenterUseCases\Mapping\**" />
     <Compile Remove="OwnerUseCases\Mappings\OwnerMapping.cs" />
     <Compile Remove="OwnerUseCases\Mappings\**" />
     <Compile Remove="ProductUseCases\Mapping\**" />
     <Compile Remove="ProviderUseCases\Mappings\**" />
     <Compile Remove="ShippingUseCases\Mapping\**" />
+    <Compile Remove="Services\UnitizerServices\UnitizerTypeService\UpdateServices\UpdateWidthService\IUnitizerTypeValidateWidthChangeService\**" />
+    <Compile Remove="DistributionCenterUseCases\Mapping\ToDistributionCenter.cs" />
+    <Compile Remove="DistributionCenterUseCases\Mapping\**" />
+    <Compile Remove="DistributionCenterUseCases\Services\Update\IDistributionCenterUpdateValidationService.cs" />
+    <Compile Remove="DistributionCenterUseCases\Services\DistributionCenterServices.cs" />
+    <Compile Remove="Services\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -78,12 +80,13 @@
     <EmbeddedResource Remove="Contracts\Product\**" />
     <EmbeddedResource Remove="UnitizerTypeUseCases\Commands\UnitizerCommands\**" />
     <EmbeddedResource Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
-    <EmbeddedResource Remove="DistributionCenterUseCases\Services\**" />
-    <EmbeddedResource Remove="DistributionCenterUseCases\Mapping\**" />
     <EmbeddedResource Remove="OwnerUseCases\Mappings\**" />
     <EmbeddedResource Remove="ProductUseCases\Mapping\**" />
     <EmbeddedResource Remove="ProviderUseCases\Mappings\**" />
     <EmbeddedResource Remove="ShippingUseCases\Mapping\**" />
+    <EmbeddedResource Remove="Services\UnitizerServices\UnitizerTypeService\UpdateServices\UpdateWidthService\IUnitizerTypeValidateWidthChangeService\**" />
+    <EmbeddedResource Remove="DistributionCenterUseCases\Mapping\**" />
+    <EmbeddedResource Remove="Services\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -106,12 +109,13 @@
     <None Remove="Contracts\Product\**" />
     <None Remove="UnitizerTypeUseCases\Commands\UnitizerCommands\**" />
     <None Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
-    <None Remove="DistributionCenterUseCases\Services\**" />
-    <None Remove="DistributionCenterUseCases\Mapping\**" />
     <None Remove="OwnerUseCases\Mappings\**" />
     <None Remove="ProductUseCases\Mapping\**" />
     <None Remove="ProviderUseCases\Mappings\**" />
     <None Remove="ShippingUseCases\Mapping\**" />
+    <None Remove="Services\UnitizerServices\UnitizerTypeService\UpdateServices\UpdateWidthService\IUnitizerTypeValidateWidthChangeService\**" />
+    <None Remove="DistributionCenterUseCases\Mapping\**" />
+    <None Remove="Services\**" />
   </ItemGroup>
 
 </Project>

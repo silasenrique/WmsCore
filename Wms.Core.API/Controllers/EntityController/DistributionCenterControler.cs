@@ -1,4 +1,5 @@
 using MediatR;
+using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
 using Wms.Core.Application.DistributionCenterUseCases.Commands.Create;
 using Wms.Core.Application.DistributionCenterUseCases.Commands.Delete;
@@ -11,7 +12,7 @@ namespace Wms.Core.API.Controllers.EntityController;
 [Route("api/cd")]
 public class DistributionCenterController : MainController
 {
-    readonly ISender _mediator;
+    private readonly ISender _mediator;
 
     public DistributionCenterController(ISender mediator)
     {
@@ -21,7 +22,7 @@ public class DistributionCenterController : MainController
     [HttpPost]
     public async Task<ActionResult<DistributionCenterResponse>> Create(DistributionCenterCreateCommand distributionCenter)
     {
-        var newCenter = await _mediator.Send(distributionCenter);
+        ErrorOr<DistributionCenterResponse> newCenter = await _mediator.Send(distributionCenter);
 
         return newCenter.Match(
             newCenter => Ok(newCenter),
@@ -32,7 +33,7 @@ public class DistributionCenterController : MainController
     [HttpPut]
     public async Task<ActionResult<DistributionCenterResponse>> Update(DistributionCenterUpdateCommand distributionCenter)
     {
-        var updated = await _mediator.Send(distributionCenter);
+        ErrorOr<DistributionCenterResponse> updated = await _mediator.Send(distributionCenter);
 
         return updated.Match(
             updated => Ok(updated),
@@ -43,9 +44,9 @@ public class DistributionCenterController : MainController
     [HttpDelete]
     public async Task<ActionResult> Delete([FromQuery] DistributionCenterDeleteCommand command)
     {
-        var err = await _mediator.Send(command);
+        Error? err = await _mediator.Send(command);
 
-        if (err != null)
+        if (err is not null)
         {
             return BadRequest(err);
         }
@@ -55,7 +56,7 @@ public class DistributionCenterController : MainController
 
     public async Task<ActionResult<List<DistributionCenterResponse>>> Get([FromQuery] DistributionCenterQueries query)
     {
-        var list = await _mediator.Send(query);
+        List<DistributionCenterResponse> list = await _mediator.Send(query);
 
         return Ok(list);
     }

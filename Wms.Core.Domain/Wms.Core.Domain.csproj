@@ -15,4 +15,8 @@
     <PackageReference Include="FluentValidation" Version="11.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Entities\Auditable.cs" />
+  </ItemGroup>
+
 </Project>

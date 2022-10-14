@@ -26,6 +26,8 @@ public class MainController : ControllerBase
             ErrorType.NotFound => StatusCodes.Status404NotFound,
             _ => StatusCodes.Status500InternalServerError,
         };
+        
+        var modelStateDictionary = new ModelStateDictionary();
 
         return Problem(statusCode: statusCode, title: error.Description);
     }
