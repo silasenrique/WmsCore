@@ -18,23 +18,30 @@ public class DistributionCenterUpdateService : IDistributionCenterUpdateService
     {
         DistributionCenter? oldDistributionCenter = await _repository.GetById(distributionCenter.Id);
         
-        if (oldDistributionCenter is null) return DistributionCenterValidationErrors.IdNotFound;
-        if (await IsTheNewDocumentAlreadyBeingUsed(oldDistributionCenter.Document, distributionCenter.Document)) return DistributionCenterValidationErrors.DocumentIsAlreadyBeingUsed;
-        if (await IsTheNewCodeAlreadyBeingUsed(oldDistributionCenter.Document, distributionCenter.Document)) return DistributionCenterValidationErrors.CodeIsAlreadyBeingUsed;
+        if (oldDistributionCenter is null) 
+            return DistributionCenterValidationErrors.IdNotFound;
         
+        if (await IsTheNewCodeAlreadyBeingUsed(oldDistributionCenter.Code, distributionCenter.Code)) 
+            return DistributionCenterValidationErrors.CodeIsAlreadyBeingUsed;
+        
+        if (await IsTheNewDocumentAlreadyBeingUsed(oldDistributionCenter.Document, distributionCenter.Document)) 
+            return DistributionCenterValidationErrors.DocumentIsAlreadyBeingUsed;
+
         return null;
     }
     
     private async Task<bool> IsTheNewDocumentAlreadyBeingUsed(string oldDocument, string newDocument)
     {
-        if (oldDocument == newDocument) return false;
+        if (oldDocument == newDocument) 
+            return false;
         
         return await _repository.GetByDocument(newDocument) is not null;
     }
     
     private async Task<bool> IsTheNewCodeAlreadyBeingUsed(string oldCode, string newCode)
     {
-        if (oldCode == newCode) return false;
+        if (oldCode == newCode) 
+            return false;
         
         return await _repository.GetByCode(newCode) is not null;
     }

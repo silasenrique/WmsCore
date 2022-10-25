@@ -16,6 +16,6 @@ public class DistributionCenterCommonWriteCommandValidator : AbstractValidator<D
 
         RuleFor(d => d.Document).Cascade(CascadeMode.Stop)
             .NotEmpty().WithMessage("{PropertyName} deve ser informado!")
-            .Must(doc => doc.Length == 11 || doc.Length == 14).WithMessage("{PropertyName} não é um documento válido!");
+            .Must(doc => doc.Length is 11 or 14).WithMessage("{PropertyName} não é um documento válido!");
     }
 }

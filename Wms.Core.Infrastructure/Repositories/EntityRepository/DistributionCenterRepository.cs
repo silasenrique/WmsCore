@@ -37,4 +37,5 @@ public class DistributionCenterRepository : GenericRepository<DistributionCenter
 
         return result.FirstOrDefault();
     }
+    
 }

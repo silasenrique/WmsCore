@@ -32,4 +32,19 @@ public class DistributionCenter
     public string Document { get; private set; }
     public long CreationDate { get; private  set; }
     public long LastChangeDate { get; private set; }
+
+    public void ChangeCode(string code)
+    {
+        Code = code;
+    }
+
+    public void ChangeName(string name)
+    {
+        Name = name;
+    }
+
+    public void ChangeDocument(string document)
+    {
+        Document = document;
+    }
 }

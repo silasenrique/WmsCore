@@ -1,5 +1,6 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using Wms.Core.Domain.Entities.Entity.Abstractions;
 using Wms.Core.Infrastructure.Context;
 
 namespace Wms.Core.Infrastructure.Repositories;
@@ -9,7 +10,7 @@ public class GenericRepository<TEntity> where TEntity : class
     private readonly DbContext _context;
     private readonly DbSet<TEntity> _dbSet;
 
-    public GenericRepository(ApplicationContext context)
+    public GenericRepository(DbContext context)
     {
         _context = context;
         _dbSet = context.Set<TEntity>();
