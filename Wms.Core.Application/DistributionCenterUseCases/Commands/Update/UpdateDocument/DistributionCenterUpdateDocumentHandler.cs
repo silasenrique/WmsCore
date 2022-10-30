@@ -8,12 +8,12 @@ using Wms.Core.Infrastructure.Interfaces.EntityRepositoryInterface;
 
 namespace Wms.Core.Application.DistributionCenterUseCases.Commands.Update.UpdateDocument;
 
-public class DistributionCenterUpdateNameHandler : ICommandHandler<DistributionCenterUpdateDocumentCommand, ErrorOr<DistributionCenterResponse>>
+public class DistributionCenterDocumentNameHandler : ICommandHandler<DistributionCenterUpdateDocumentCommand, ErrorOr<DistributionCenterResponse>>
 {
     private readonly IDistributionCenterRepository _repository;
     private readonly IDistributionCenterUpdateService _service;
 
-    public DistributionCenterUpdateNameHandler(IDistributionCenterRepository repository, IDistributionCenterUpdateService service)
+    public DistributionCenterDocumentNameHandler(IDistributionCenterRepository repository, IDistributionCenterUpdateService service)
     {
         _repository = repository;
         _service = service;
