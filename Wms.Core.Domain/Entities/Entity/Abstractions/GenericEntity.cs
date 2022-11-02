@@ -1,8 +1,9 @@
+using Wms.Core.Domain.Common.Models;
 using Wms.Core.Domain.Enums;
 
 namespace Wms.Core.Domain.Entities.Entity.Abstractions;
 
-public abstract class GenericEntity
+public abstract class GenericEntity : Audit
 {
     protected GenericEntity(string code)
     {
@@ -15,8 +16,6 @@ public abstract class GenericEntity
         Document = document;
         TypeDoc = typeDoc;
         Status = status;
-        CreationDate = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
-        LastChangeDate = CreationDate;
     }
 
     protected GenericEntity(int id, string code, string name, string document, TypeEntity typeDoc, GlobalStatus status)
@@ -27,7 +26,6 @@ public abstract class GenericEntity
         Document = document;
         TypeDoc = typeDoc;
         Status = status;
-        LastChangeDate = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
     }
 
     public int Id { get; private set; }
@@ -36,6 +34,4 @@ public abstract class GenericEntity
     public string Document { get; private set; }
     public TypeEntity TypeDoc { get; private set; }
     public GlobalStatus Status { get; private set; }
-    public long CreationDate { get; private set; }
-    public long LastChangeDate { get; private set; }
 }

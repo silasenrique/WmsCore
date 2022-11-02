@@ -34,8 +34,8 @@ public class ShippingQueryHandler : ICommandHandler<ShippingQuery, List<Shipping
             sh.Name,
             sh.TypeDoc,
             sh.Status,
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(sh.CreationDate).ToLocalTime().ToString(), 
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(sh.LastChangeDate).ToLocalTime().ToString())));
+            sh.CreationDate, 
+            sh.LastChangeDate)));
 
         return response;
     }

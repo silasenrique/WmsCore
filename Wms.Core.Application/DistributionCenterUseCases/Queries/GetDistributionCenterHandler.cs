@@ -8,7 +8,7 @@ namespace Wms.Core.Application.DistributionCenterUseCases.Queries;
 
 public class GetDistributionCenterHandler : ICommandHandler<DistributionCenterUseCases.Queries.DistributionCenterQueries, List<DistributionCenterResponse>>
 {
-    readonly IDistributionCenterRepository _repository;
+    private readonly IDistributionCenterRepository _repository;
 
     public GetDistributionCenterHandler(IDistributionCenterRepository repository)
     {
@@ -34,8 +34,8 @@ public class GetDistributionCenterHandler : ICommandHandler<DistributionCenterUs
                 cd.Code,
                 cd.Name,
                 cd.Document,
-                new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(cd.CreationDate).ToLocalTime().ToString(), 
-                new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(cd.LastChangeDate).ToLocalTime().ToString())));
+                cd.CreationDate, 
+                cd.LastChangeDate)));
 
         return result;
     }

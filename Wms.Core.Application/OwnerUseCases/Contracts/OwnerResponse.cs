@@ -9,6 +9,6 @@ public record OwnerResponse(
     string Name,
     TypeEntity TypeDoc,
     GlobalStatus GlobalStatus,
-    string CreationDate,
-    string LastChangeDate
+    DateTime CreationDate,
+    DateTime LastChangeDate
 );

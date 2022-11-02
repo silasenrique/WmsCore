@@ -34,8 +34,8 @@ public class OwnerQueryHandler : ICommandHandler<OwnerQuery, List<OwnerResponse>
                 ow.Name,
                 ow.TypeDoc,
                 ow.Status,
-                new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(ow.CreationDate).ToLocalTime().ToString(), 
-                new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(ow.LastChangeDate).ToLocalTime().ToString())));
+                ow.CreationDate,
+                ow.LastChangeDate)));
 
         return response;
     }

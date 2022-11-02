@@ -1,5 +1,7 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Wms.Core.Domain.Common.Models;
 using Wms.Core.Domain.Entities.Entity.Abstractions;
 using Wms.Core.Infrastructure.Context;
 
@@ -41,6 +43,34 @@ public class GenericRepository<TEntity> where TEntity : class
 
     public async Task SaveChanges()
     {
+        TrackInsert();
+        TrackUpdate();
         await _context.SaveChangesAsync();
+    }
+
+    private void TrackInsert()
+    {
+        IEnumerable<object> insertedRecords = _context.ChangeTracker.Entries()
+            .Where(c => c.State == EntityState.Added)
+            .Select(c => c.Entity);
+
+        foreach (object insertedRecord in insertedRecords)
+        {
+            if (insertedRecord is not Audit audit) continue;
+            audit.CreateRecord();
+        }
+    }
+    
+    private void TrackUpdate()
+    {
+        IEnumerable<object> updatedRecords = _context.ChangeTracker.Entries()
+            .Where(c => c.State == EntityState.Modified)
+            .Select(c => c.Entity);
+
+        foreach (object updateRecord in updatedRecords)
+        {
+            if (updateRecord is not Audit audit) continue;
+            audit.UpdateRecord();
+        }
     }
 }

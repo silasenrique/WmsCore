@@ -5,5 +5,5 @@ public record DistributionCenterResponse(
     string Code,
     string Name,
     string Document,
-    string CreationDate,
-    string LastChangeDate);
+    DateTime CreationDate,
+    DateTime LastChangeDate);

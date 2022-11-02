@@ -1,0 +1,8 @@
+POST https://localhost:7224/api/cd HTTP/1.1
+Content-Type: application/json; charset=utf-8
+
+{
+    "code": "CJM",
+    "name" : "Centro de Distribuição de Cajamar",
+    "document": "23681315110196"
+}

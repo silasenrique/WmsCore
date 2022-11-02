@@ -13,6 +13,8 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("WmsDb"),
             o => o.MigrationsAssembly("Wms.Core.Infrastructure"));
+    
+    AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 });
 
 builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));

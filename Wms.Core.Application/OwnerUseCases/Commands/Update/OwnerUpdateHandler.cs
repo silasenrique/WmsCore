@@ -36,7 +36,7 @@ public class OwnerUpdateHandler : ICommandHandler<OwnerUpdateCommand, ErrorOr<Ow
             owner.Name,
             owner.TypeDoc,
             owner.Status,
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(owner.CreationDate).ToString(),
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(owner.LastChangeDate).ToString());;
+            owner.CreationDate,
+            owner.LastChangeDate);;
     }
 }

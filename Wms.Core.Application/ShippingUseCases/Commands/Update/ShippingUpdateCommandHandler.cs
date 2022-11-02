@@ -36,7 +36,7 @@ public class ShippingUpdateCommandHandler : ICommandHandler<ShippingUpdateComman
             shipping.Name,
             shipping.TypeDoc,
             shipping.Status,
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(shipping.CreationDate).ToString(),
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(shipping.LastChangeDate).ToString());
+            shipping.CreationDate,
+            shipping.LastChangeDate);
     }
 }

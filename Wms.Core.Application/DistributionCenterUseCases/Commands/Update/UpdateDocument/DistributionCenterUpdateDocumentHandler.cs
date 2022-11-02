@@ -36,7 +36,7 @@ public class DistributionCenterDocumentNameHandler : ICommandHandler<Distributio
             cd.Code,
             cd.Name,
             cd.Document,
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(cd.CreationDate).ToLocalTime().ToString(), 
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(cd.LastChangeDate).ToLocalTime().ToString());
+            cd.CreationDate, 
+            cd.LastChangeDate);
     }
 }

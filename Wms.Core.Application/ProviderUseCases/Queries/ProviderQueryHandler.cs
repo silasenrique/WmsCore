@@ -34,8 +34,8 @@ public class ProviderQueryHandler : ICommandHandler<ProviderQuery, List<Provider
             pv.Name,
             pv.TypeDoc,
             pv.Status,
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(pv.CreationDate).ToLocalTime().ToString(), 
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(pv.LastChangeDate).ToLocalTime().ToString())));
+            pv.CreationDate,
+            pv.LastChangeDate)));
 
         return response;
     }

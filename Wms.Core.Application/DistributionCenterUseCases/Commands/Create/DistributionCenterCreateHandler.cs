@@ -36,7 +36,7 @@ public class DistributionCenterCreateHandler : ICommandHandler<DistributionCente
             distributionCenter.Code,
             distributionCenter.Name, 
             distributionCenter.Document,
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(distributionCenter.CreationDate).ToLocalTime().ToString(), 
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(distributionCenter.LastChangeDate).ToLocalTime().ToString());
+            distributionCenter.CreationDate,
+            distributionCenter.LastChangeDate);
     }
 }

@@ -38,7 +38,7 @@ public class DistributionCenterUpdateHandler : ICommandHandler<DistributionCente
             updated.Code,
             updated.Name, 
             updated.Document,
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(updated.CreationDate).ToLocalTime().ToString(), 
-            new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(updated.LastChangeDate).ToLocalTime().ToString());
+            updated.CreationDate, 
+            updated.LastChangeDate);
     }
 }
