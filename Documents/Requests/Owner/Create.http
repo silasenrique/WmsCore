@@ -1,10 +1,18 @@
-POST https://localhost:7224/api/owner HTTP/1.1
+POST http://localhost:5000/api/owner HTTP/1.1
 Content-Type: application/json
 
 {
-    "code": "TEGMAN",
-    "name": "Tegma Serviços LTDA",
-    "document": "1212121",
-    "typeDoc": "LegalPerson",
-    "status": "Disabled"
+   "code": "EUUJAKSJA",
+   "name": "EUUJAKSJA Serviços Diversos",
+   "document": "88829284718",
+   "customers": {
+      "existingCustomers": [
+         "21819a53-b8ff-4936-8ee5-07e2433e371e",
+         "9d715077-1581-4218-aa16-504f304284c1",
+         "c117f068-a758-40ce-8195-c091a02d3c93",
+         "ade1c8e1-0db8-4bb4-b78b-0299976b7dd5",
+         "4879a421-d216-4818-9c18-f86c8feb08e9",
+         "db175685-2ffc-4e24-925e-7e7e91c95e51"
+      ]
+   }
 }

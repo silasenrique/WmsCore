@@ -4,9 +4,7 @@ using Wms.Core.Application.OwnerUseCases.Contracts;
 namespace Wms.Core.Application.OwnerUseCases.Queries;
 
 public record OwnerQuery(
-    int? Id,
+    Guid? Id,
     string? Code,
     string? Name,
-    string? Document,
-    int? TypeDoc,
-    int? Status) : ICommand<List<OwnerResponse>>;
+    string? Document) : ICommand<IEnumerable<OwnerResponse>>;

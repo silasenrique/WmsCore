@@ -1,0 +1,12 @@
+POST https://localhost:5001/api/owner/copy HTTP/1.1
+Content-Type: application/json
+
+{
+   "ownerDestinyId": "ada48a1f-8484-4612-97a0-63b2ac51c717",
+   "ownerBaseId":"aa1cd7fc-3e41-4721-84d2-8888a81c869a",
+   "customersToBeCopied":[
+      "87990a74-d66d-4fab-8c10-985f3afc8e04",
+      "b0fab6d5-4f5e-4628-988f-6b7e798f4ee0",
+      "e9e02c7e-95b8-4a31-a504-c2706acf2890" 
+   ]
+}

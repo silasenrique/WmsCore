@@ -1,121 +1,27 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Owner\Command\Create" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Wms.Core.Domain\Wms.Core.Domain.csproj" />
-    <ProjectReference Include="..\Wms.Core.Infrastructure\Wms.Core.Infrastructure.csproj" />
+    <ProjectReference Include="..\Wms.Core.Persistence\Wms.Core.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ErrorOr" Version="1.0.0" />
-    <PackageReference Include="FluentValidation" Version="11.2.0" />
-    <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.1" />
-    <PackageReference Include="MediatR" Version="10.0.1" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DistributionCenterUseCases\Commands" />
-    <Folder Include="OwnerUseCases\Commands" />
-    <Folder Include="ProductUseCases" />
-    <Folder Include="ProviderUseCases\Commands" />
-    <Folder Include="ShippingUseCases\Commands" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Commands\EntityCommands\DistributionCenterCommand\**" />
-    <Compile Remove="Queries\EntityQuery\DistributionCenterQueries\**" />
-    <Compile Remove="Contracts\EntityContract\DistributionCenter\**" />
-    <Compile Remove="Commands\EntityCommands\OwnerCommand\**" />
-    <Compile Remove="Contracts\EntityContract\Owner\**" />
-    <Compile Remove="Queries\EntityQuery\OwnerQueries\**" />
-    <Compile Remove="Queries\EntityQuery\ProviderQueries\**" />
-    <Compile Remove="Commands\EntityCommands\ProviderCommand\**" />
-    <Compile Remove="Contracts\EntityContract\Provider\**" />
-    <Compile Remove="Commands\EntityCommands\ShippingCommand\**" />
-    <Compile Remove="Queries\EntityQuery\**" />
-    <Compile Remove="Commands\EntityCommands\**" />
-    <Compile Remove="Contracts\EntityContract\**" />
-    <Compile Remove="Common\Mapping\EntityMapping\**" />
-    <Compile Remove="Common\Mapping\**" />
-    <Compile Remove="ProductUseCases\ProductCommands\**" />
-    <Compile Remove="Contracts\Product\**" />
-    <Compile Remove="UnitizerTypeUseCases\Commands\UnitizerCommands\**" />
-    <Compile Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
-    <Compile Remove="OwnerUseCases\Mappings\OwnerMapping.cs" />
-    <Compile Remove="OwnerUseCases\Mappings\**" />
-    <Compile Remove="ProductUseCases\Mapping\**" />
-    <Compile Remove="ProviderUseCases\Mappings\**" />
-    <Compile Remove="ShippingUseCases\Mapping\**" />
-    <Compile Remove="Services\UnitizerServices\UnitizerTypeService\UpdateServices\UpdateWidthService\IUnitizerTypeValidateWidthChangeService\**" />
-    <Compile Remove="DistributionCenterUseCases\Mapping\ToDistributionCenter.cs" />
-    <Compile Remove="DistributionCenterUseCases\Mapping\**" />
-    <Compile Remove="DistributionCenterUseCases\Services\Update\IDistributionCenterUpdateValidationService.cs" />
-    <Compile Remove="DistributionCenterUseCases\Services\DistributionCenterServices.cs" />
-    <Compile Remove="Services\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Remove="Commands\EntityCommands\DistributionCenterCommand\**" />
-    <EmbeddedResource Remove="Queries\EntityQuery\DistributionCenterQueries\**" />
-    <EmbeddedResource Remove="Contracts\EntityContract\DistributionCenter\**" />
-    <EmbeddedResource Remove="Commands\EntityCommands\OwnerCommand\**" />
-    <EmbeddedResource Remove="Contracts\EntityContract\Owner\**" />
-    <EmbeddedResource Remove="Queries\EntityQuery\OwnerQueries\**" />
-    <EmbeddedResource Remove="Queries\EntityQuery\ProviderQueries\**" />
-    <EmbeddedResource Remove="Commands\EntityCommands\ProviderCommand\**" />
-    <EmbeddedResource Remove="Contracts\EntityContract\Provider\**" />
-    <EmbeddedResource Remove="Commands\EntityCommands\ShippingCommand\**" />
-    <EmbeddedResource Remove="Queries\EntityQuery\**" />
-    <EmbeddedResource Remove="Commands\EntityCommands\**" />
-    <EmbeddedResource Remove="Contracts\EntityContract\**" />
-    <EmbeddedResource Remove="Common\Mapping\EntityMapping\**" />
-    <EmbeddedResource Remove="Common\Mapping\**" />
-    <EmbeddedResource Remove="ProductUseCases\ProductCommands\**" />
-    <EmbeddedResource Remove="Contracts\Product\**" />
-    <EmbeddedResource Remove="UnitizerTypeUseCases\Commands\UnitizerCommands\**" />
-    <EmbeddedResource Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
-    <EmbeddedResource Remove="OwnerUseCases\Mappings\**" />
-    <EmbeddedResource Remove="ProductUseCases\Mapping\**" />
-    <EmbeddedResource Remove="ProviderUseCases\Mappings\**" />
-    <EmbeddedResource Remove="ShippingUseCases\Mapping\**" />
-    <EmbeddedResource Remove="Services\UnitizerServices\UnitizerTypeService\UpdateServices\UpdateWidthService\IUnitizerTypeValidateWidthChangeService\**" />
-    <EmbeddedResource Remove="DistributionCenterUseCases\Mapping\**" />
-    <EmbeddedResource Remove="Services\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Commands\EntityCommands\DistributionCenterCommand\**" />
-    <None Remove="Queries\EntityQuery\DistributionCenterQueries\**" />
-    <None Remove="Contracts\EntityContract\DistributionCenter\**" />
-    <None Remove="Commands\EntityCommands\OwnerCommand\**" />
-    <None Remove="Contracts\EntityContract\Owner\**" />
-    <None Remove="Queries\EntityQuery\OwnerQueries\**" />
-    <None Remove="Queries\EntityQuery\ProviderQueries\**" />
-    <None Remove="Commands\EntityCommands\ProviderCommand\**" />
-    <None Remove="Contracts\EntityContract\Provider\**" />
-    <None Remove="Commands\EntityCommands\ShippingCommand\**" />
-    <None Remove="Queries\EntityQuery\**" />
-    <None Remove="Commands\EntityCommands\**" />
-    <None Remove="Contracts\EntityContract\**" />
-    <None Remove="Common\Mapping\EntityMapping\**" />
-    <None Remove="Common\Mapping\**" />
-    <None Remove="ProductUseCases\ProductCommands\**" />
-    <None Remove="Contracts\Product\**" />
-    <None Remove="UnitizerTypeUseCases\Commands\UnitizerCommands\**" />
-    <None Remove="UnitizerTypeUseCases\Queries\UnitizerQueries\**" />
-    <None Remove="OwnerUseCases\Mappings\**" />
-    <None Remove="ProductUseCases\Mapping\**" />
-    <None Remove="ProviderUseCases\Mappings\**" />
-    <None Remove="ShippingUseCases\Mapping\**" />
-    <None Remove="Services\UnitizerServices\UnitizerTypeService\UpdateServices\UpdateWidthService\IUnitizerTypeValidateWidthChangeService\**" />
-    <None Remove="DistributionCenterUseCases\Mapping\**" />
-    <None Remove="Services\**" />
+    <PackageReference Include="ErrorOr" Version="1.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.2.2" />
+    <PackageReference Include="MediatR" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.3.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
 
 </Project>

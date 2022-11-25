@@ -1,1 +1,1 @@
-    GET https://localhost:7224/api/owner
+    GET http://localhost:5000/api/owner
