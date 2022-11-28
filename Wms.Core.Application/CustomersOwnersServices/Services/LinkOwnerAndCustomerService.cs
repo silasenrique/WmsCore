@@ -16,7 +16,7 @@ public class LinkOwnerAndCustomerService : ILinkOwnerAndCustomerService
 
     public void LinkOwnerAndCustomer(Owner owner, List<Customer> customers)
     {
-        List<CustomerOwner> customersOwners = customers.ConvertAll(n => CustomerOwner.Create(owner, n));
+        List<CustomerOwner> customersOwners = customers.ConvertAll(n => CustomerOwner.Create(n.Id, owner.Id));
 
         _customerOwnerRepository.AddRange(customersOwners);
     }

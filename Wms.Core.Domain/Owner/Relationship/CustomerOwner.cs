@@ -27,4 +27,9 @@ public class CustomerOwner
     {
         return new CustomerOwner(owner, customer);
     }
+
+    public static CustomerOwner Create(Guid customerId, Guid ownerId)
+    {
+        return new CustomerOwner(customerId, ownerId);
+    }
 }

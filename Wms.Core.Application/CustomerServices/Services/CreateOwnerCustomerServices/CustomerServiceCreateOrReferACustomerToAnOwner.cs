@@ -32,7 +32,7 @@ public class CustomerServiceCreateOrReferACustomerToAnOwner : ICustomerServiceCr
 
     private bool IsCreatingOrReferencing(CreateOrReferACustomerToAnOwner customers)
     {
-        return customers.ExistingCustomers.Any() || customers.NewCustomers.Any();
+        return customers.ExistingCustomers is not null || customers.NewCustomers is not null;
     }
 
     private List<Customer> CreateNewCustomers(List<CustomerCreateCommand> createCustomers)

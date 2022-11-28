@@ -1,1 +1,1 @@
-    DELETE https://localhost:7224/api/owner?code=ALCIS
+    DELETE http://localhost:5000/api/owner?id=d51bf28c-7bba-4e08-b887-d99aa8246963
