@@ -7,4 +7,5 @@ public interface ICustomerRepository : IGenericRepository<Customer>
 {
     void AddRange(List<Customer> customers);
     Customer? GetByIdWithoutInclude(Guid id);
+    void DeleteRange(List<Customer> customers);
 }

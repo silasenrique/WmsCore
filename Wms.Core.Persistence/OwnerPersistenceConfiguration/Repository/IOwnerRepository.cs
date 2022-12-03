@@ -4,4 +4,7 @@ using Wms.Core.Persistence.Common.Repository;
 
 namespace Wms.Core.Persistence.OwnerPersistenceConfiguration.Repository;
 
-public interface IOwnerRepository : IGenericRepository<Owner> { }
+public interface IOwnerRepository : IGenericRepository<Owner>
+{
+    Owner? GetOnlyOwner(Expression<Func<Owner, bool>> expression);
+}

@@ -6,5 +6,6 @@ namespace Wms.Core.Persistence.CustomerOwnerPersistence.Repository;
 public interface ICustomerOwnerRepository : IGenericRepository<CustomerOwner>
 {
     void AddRange(List<CustomerOwner> customerOwner);
-    void GetOwnerCustomer(Guid ownerId);
+    List<CustomerOwner>? GetOwnerCustomers(Guid ownerId);
+    List<CustomerOwner> DeleteCustomersNotLinkedToAnotherOwner(Guid ownerId);
 }

@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Wms.Core.Domain.Owner.Models;
 using Wms.Core.Domain.Owner.Relationship;
 using Wms.Core.Persistence.Common.Repository;
 using Wms.Core.Persistence.Configuration;
@@ -17,25 +16,33 @@ public class CustomerOwnerRepository : GenericRepository<CustomerOwner>, ICustom
         _context.CustomerOwner.AddRange(customerOwner);
     }
 
-    public void GetOwnerCustomer(Guid ownerId)
+    public List<CustomerOwner>? GetOwnerCustomers(Guid ownerId)
     {
-        var query = $@"
-        select id customer_id
-          from customer, (
-                select customer_id,
-                       count(owner_id) count_owner
-                  from customer_owner
-                 where customer_id in (
-                        select customer_id
-                          from customer_owner
-                          where owner_id = '{ownerId}')
-                group by customer_id
-                having count(owner_id) = 1
-            ) d
-        where id = customer_id".Replace("\n", " ").Trim();
+        string query = $@"
+select * 
+  from customer_owner co 
+ where co.owner_id  = '{ownerId}'
+   and exists (
+      select b.customer_id, count(b.owner_id) count_owner
+        from customer_owner b
+       where b.customer_id in (
+              select a.customer_id
+                from customer_owner a
+               where a.owner_id = co.owner_id)
+         and b.customer_id = co.customer_id
+    group by b.customer_id
+      having count(b.owner_id) = 1)".Replace("\n", "").Trim();
 
-        var abc = _dbSet.FromSqlRaw(query).ToList();
+        return _dbSet.FromSqlRaw(query).IgnoreAutoIncludes().ToList();
+    }
 
-        System.Console.WriteLine(abc.Count);
+    public List<CustomerOwner> DeleteCustomersNotLinkedToAnotherOwner(Guid ownerId)
+    {
+        List<CustomerOwner>? customersToRemove = GetOwnerCustomers(ownerId);
+        if (customersToRemove is null) return new();
+
+        _dbSet.RemoveRange(customersToRemove);
+
+        return customersToRemove;
     }
 }

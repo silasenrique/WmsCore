@@ -28,29 +28,4 @@ public class Owner : Entity
     {
         return new Owner(Guid.NewGuid(), code, name, document);
     }
-
-    //public void CopyCustomerOfAnotherOwner(Owner ownerBase, List<Guid> customersToCopy)
-    //{
-    //    if (!customersToCopy.Any()) return;
-    //    if (!ownerBase.Customers.Any()) return;
-    //
-    //    // TODO: não deixar copiar algo que já existe na lista de destino
-    //
-    //    ownerBase.Customers.AsEnumerable()
-    //        .Where(c => customersToCopy.Contains(c.Id))
-    //        .ToList()
-    //        .ForEach(b => Customers.Add(
-    //            Customer.Create(b.Code, b.Name, b.Document))
-    //        );
-    //}
-
-    //public void CreateCustomer(string code, string name, string document)
-    //{
-    //    Customers.Add(Customer.Create(code, name, document));
-    //}
-    //
-    //public void AddExistingCustomer(Customer customer)
-    //{
-    //    Customers.Add(Customer.Create(customer.Id, customer.Code, customer.Name, customer.Document));
-    //}
 }

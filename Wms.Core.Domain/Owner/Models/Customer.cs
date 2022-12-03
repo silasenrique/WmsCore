@@ -12,6 +12,8 @@ public class Customer : Entity
         Document = document;
     }
 
+    private Customer(Guid id) : base(id) { }
+
     public static Customer Create(Guid id, string code, string name, string document)
     {
         return new Customer(id, code, name, document);
@@ -20,6 +22,11 @@ public class Customer : Entity
     public static Customer Create(string code, string name, string document)
     {
         return new Customer(Guid.NewGuid(), code, name, document);
+    }
+
+    public static Customer Create(Guid id)
+    {
+        return new Customer(id);
     }
 
     public string Code { get; }

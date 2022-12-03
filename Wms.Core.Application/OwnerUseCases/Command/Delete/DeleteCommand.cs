@@ -7,5 +7,5 @@ public record DeleteCommand(
     Guid? Id,
     string? Code,
     string? Document,
-    bool? DeleteDependencies
+    bool DeleteDependencies
 ) : ICommand<Error?>;

@@ -20,14 +20,13 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasCollation("case_insensitive", locale: "en-u-ks-primary", provider: "icu", deterministic: false);
-        modelBuilder.UseDefaultColumnCollation("case_insensitive");
-
-
         modelBuilder.ApplyConfiguration(new OwnerMapping());
         modelBuilder.ApplyConfiguration(new CustomerMapping());
         modelBuilder.ApplyConfiguration(new CustomerOwnerMapping());
 
         base.OnModelCreating(modelBuilder);
     }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder
+        .UseNpgsql().UseSnakeCaseNamingConvention();
 }

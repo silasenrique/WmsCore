@@ -20,4 +20,9 @@ public class CustomerRepository : GenericRepository<Customer>, ICustomerReposito
 
         return Get(expression)?.FirstOrDefault();
     }
+
+    public void DeleteRange(List<Customer> customers)
+    {
+        _dbSet.RemoveRange(customers);
+    }
 }

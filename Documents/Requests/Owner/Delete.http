@@ -1,1 +1,1 @@
-    DELETE http://localhost:5000/api/owner?id=d51bf28c-7bba-4e08-b887-d99aa8246963
+DELETE http://localhost:5000/api/owner?id=35d17b05-0b22-4a62-846e-a5887095d4e2&deleteDependencies=true

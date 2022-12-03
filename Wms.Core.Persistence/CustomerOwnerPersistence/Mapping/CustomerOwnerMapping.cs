@@ -10,13 +10,11 @@ public class CustomerOwnerMapping : IEntityTypeConfiguration<CustomerOwner>
     {
         builder.HasKey(x => new { x.CustomerId, x.OwnerId });
 
-        builder.Property(o => o.OwnerId).IsRequired().HasColumnName("owner_id");
-        builder.Property(o => o.CustomerId).IsRequired().HasColumnName("customer_id");
+        builder.Property(o => o.OwnerId).IsRequired();
+        builder.Property(o => o.CustomerId).IsRequired();
 
         builder.Metadata.FindNavigation(nameof(CustomerOwner.Customer))?.SetPropertyAccessMode(PropertyAccessMode.Field);
         builder.Metadata.FindNavigation(nameof(CustomerOwner.Owner))?.SetPropertyAccessMode(PropertyAccessMode.Field);
         builder.Navigation(c => c.Customer).AutoInclude();
-
-        builder.ToTable("customer_owner");
     }
 }

@@ -10,11 +10,8 @@ public class OwnerRepository : GenericRepository<Owner>, IOwnerRepository
 {
     public OwnerRepository(ApplicationDbContext context) : base(context) { }
 
-    public Owner? GetByIdIncludeAll(Guid id)
+    public Owner? GetOnlyOwner(Expression<Func<Owner, bool>> expression)
     {
-        Expression<Func<Owner, bool>> _expression = e => e.Id == id;
-
-        return _dbSet.Where(_expression).Include(owner => owner.Customers)
-            .ThenInclude(customer => customer.Customer).FirstOrDefault();
+        return _dbSet.Where(expression).IgnoreAutoIncludes().AsNoTracking().FirstOrDefault();
     }
 }
